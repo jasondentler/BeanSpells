@@ -15,9 +15,15 @@ angular.module('starter.services', [])
           spells = response.data;
           isLoaded = true;
 
-          for (var i = 0; i < spells.length; i++)
-            spells[i].id = i;
+          var levelFinder = /^\d+/g;
+          for (var i = 0; i < spells.length; i++) {
+            var spell = spells[i];
+            spell.id = i;
+            var calculatedLevel = levelFinder.exec(spell.level);
+            spell.calculatedLevel = !!calculatedLevel ? parseInt(calculatedLevel[0], 10) : 0;
+          }
 
+          console.log(spells);
           return spells;
         });
     };
@@ -37,6 +43,20 @@ angular.module('starter.services', [])
           return x;
         })
       },
+      levels: function () {
+        return loadSpells().then(function (spells) {
+          var levels = spells
+            .map(function (spell) { return spell.calculatedLevel; })
+            .distinct()
+            .sort()
+            .map(function (level) {
+              if (level === 0) return {name:'Cantrip', value: 0};
+              return {name:'Level ' + level, value: level};
+            })
+          console.log(levels);
+          return levels;
+        })
+      },
       all: function () {
         return loadSpells();
       },
@@ -45,6 +65,13 @@ angular.module('starter.services', [])
           console.log({ 'Creating filter on class': className });
           return function (item) {
             return !!item.class && item.class.includes(className);
+          }
+        },
+        byLevel: function (level) {
+          console.log({ 'Creating filter on level': level });
+          var calculatedLevel = parseInt(level, 10);
+          return function (item) {
+            return item.calculatedLevel === calculatedLevel;
           }
         }
       },
