@@ -1,0 +1,21 @@
+<ion-view view-title="Spells">
+  <ion-content class="padding">
+    <ion-item>
+      <label for="Class">Class:</label>
+      <select name="Class" id="Class" ng-model="filters.className" ng-init="" ng-change="onClassFilterChange(filters.className)">
+        <option value="">All</option>
+        <option ng-repeat="class in classes" value="{{class}}">{{class}}</option>
+      </select>
+    </ion-item>
+    <ion-item>
+      <ion-list>
+        <ion-item class="item-remove-animate item-avatar item-icon-right item-text-wrap" ng-repeat="spell in spells" type="item-text-wrap"
+          href="#/tab/spells/{{spell.id}}">
+          <h2>{{spell.name}}</h2>
+          <div ng-bind-html="spell.desc" />
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+  </ion-content>
+</ion-view>
