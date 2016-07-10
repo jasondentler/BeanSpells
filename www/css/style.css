@@ -1,4 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.spell.item {
+    padding-left: 1em;
+}
 
 .spell, .spell h2 {
     font-family: 'Times New Roman', Times, serif

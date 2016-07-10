@@ -15,12 +15,11 @@ angular.module('starter.services', [])
           spells = response.data;
           isLoaded = true;
 
-          var levelFinder = /^\d+/g;
           for (var i = 0; i < spells.length; i++) {
             var spell = spells[i];
             spell.id = i;
-            var calculatedLevel = levelFinder.exec(spell.level);
-            spell.calculatedLevel = !!calculatedLevel ? parseInt(calculatedLevel[0], 10) : 0;
+            var calculatedLevel = !!spell.level ? parseInt(spell.level.charAt(0), 10) : 0;
+            spell.calculatedLevel = isNaN(calculatedLevel) ? 0 : calculatedLevel;
           }
 
           console.log(spells);
@@ -71,7 +70,7 @@ angular.module('starter.services', [])
           console.log({ 'Creating filter on level': level });
           var calculatedLevel = parseInt(level, 10);
           return function (item) {
-            return item.calculatedLevel === calculatedLevel;
+            return item.calculatedLevel <= calculatedLevel;
           }
         }
       },
