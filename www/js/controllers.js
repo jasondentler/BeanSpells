@@ -53,3 +53,17 @@ angular.module('starter.controllers', [])
 
     bindSpells(filters);
   })
+  .controller('SettingsCtrl', function($scope, Settings) {
+    console.log('Settings controller');
+
+    $scope.updateSpellUrl = function (url) {
+      console.log({'Updating spell url to': url});
+
+      $scope.updatingSpells = true;
+      
+      Settings.updateSpellUrl(url).then(function (url) {
+        console.log('Done updating spells');
+        $scope.updatingSpells = false;
+      });
+    }
+  })

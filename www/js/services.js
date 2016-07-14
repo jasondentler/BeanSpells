@@ -12,24 +12,33 @@ angular.module('starter.services', [])
 
       return $http.get(defaultLocation)
         .then(function (response) {
-          spells = response.data;
-          isLoaded = true;
-
-          for (var i = 0; i < spells.length; i++) {
-            var spell = spells[i];
-            spell.id = i;
-            var calculatedLevel = !!spell.level ? parseInt(spell.level.charAt(0), 10) : 0;
-            spell.calculatedLevel = isNaN(calculatedLevel) ? 0 : calculatedLevel;
-          }
-
-          console.log(spells);
-          return spells;
+          return parseSpells(response.data);
         });
     };
+
+    var parseSpells = function (spellData) {
+      if (typeof spellData === 'undefined' || spellData === null) return spells;
+
+      spells = spellData;
+      isLoaded = true;
+
+      for (var i = 0; i < spells.length; i++) {
+        var spell = spells[i];
+        spell.id = i;
+        var calculatedLevel = !!spell.level ? parseInt(spell.level.charAt(0), 10) : 0;
+        spell.calculatedLevel = isNaN(calculatedLevel) ? 0 : calculatedLevel;
+      }
+
+      console.log(spells);
+      return spells;
+    }
 
     loadSpells();
 
     return {
+      updateSpells: function (spellData) {
+        parseSpells(spellData);
+      },
       classes: function () {
         return loadSpells().then(function (spells) {
           var x = spells
@@ -49,8 +58,8 @@ angular.module('starter.services', [])
             .distinct()
             .sort()
             .map(function (level) {
-              if (level === 0) return {name:'Cantrip', value: 0};
-              return {name:'Level ' + level, value: level};
+              if (level === 0) return { name: 'Cantrip', value: 0 };
+              return { name: 'Level ' + level, value: level };
             })
           console.log(levels);
           return levels;
@@ -104,4 +113,21 @@ angular.module('starter.services', [])
         });
       }
     }
+  })
+  .factory('Settings', function ($q, $http, Spells) {
+    var Settings = { spellUrl: '' };
+    Settings.updateSpellUrl = function (url) {
+      if (url === Settings.spellUrl) return $q.when(url);
+
+      return $http.get(url).then(function (response) {
+        var x = {};
+        x[url] = response.data;
+        console.log(x);
+
+        Settings.spellUrl = url;
+        Spells.updateSpells(response.data);
+        return url;
+      });
+    }
+    return Settings;
   });

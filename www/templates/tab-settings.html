@@ -1,0 +1,11 @@
+<ion-view view-title="Settings" class="settings">
+    <ion-content>
+        <div ng-if="!updatingSpells">
+            <input type="text" id="spellUrl" ng-model="spellUrlTextValue" />
+            <button ng-click="updateSpellUrl(spellUrlTextValue)" />
+        </div>
+        <div ng-if="updatingSpells">
+            <ion-spinner class="center"></ion-spinner>
+        </div>
+    </ion-content>
+</ion-view>
