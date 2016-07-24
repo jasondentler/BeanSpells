@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
-  .controller('SpellsCtrl', function ($scope, Spells) {
+  .controller('SpellsCtrl', function ($scope, Spells, Scroller) {
     console.log('Spells controller')
     $scope.filters = {};
 
@@ -43,6 +43,27 @@ angular.module('starter.controllers', [])
       bindSpells();
     }
 
+    $scope.isExpanded = function (spell) {
+      return spell === $scope.selectedSpell;
+    }
+
+    $scope.toggleView = function (spell) {
+      console.log({'Toggling view of': spell});
+      
+      var selectedSpell = $scope.selectedSpell;
+
+      if (selectedSpell == spell) {
+        // Unselect the spell
+        console.log({'Toggle off spell': spell.name});
+        $scope.selectedSpell = null;
+        return;
+      }
+
+      console.log({'Toggle to spell': spell});
+      $scope.selectedSpell = spell;
+      setTimeout(function () { Scroller.scrollTo('spell-' + spell.id); }, 0);
+    }
+
     Spells.classes().then(function (classes) {
       $scope.classes = classes;
     })
@@ -51,16 +72,18 @@ angular.module('starter.controllers', [])
       $scope.levels = levels;
     })
 
+    $scope.selectedSpell = null;
     bindSpells(filters);
   })
-  .controller('SettingsCtrl', function($scope, Settings) {
+
+  .controller('SettingsCtrl', function ($scope, Settings) {
     console.log('Settings controller');
 
     $scope.updateSpellUrl = function (url) {
-      console.log({'Updating spell url to': url});
+      console.log({ 'Updating spell url to': url });
 
       $scope.updatingSpells = true;
-      
+
       Settings.updateSpellUrl(url).then(function (url) {
         console.log('Done updating spells');
         $scope.updatingSpells = false;

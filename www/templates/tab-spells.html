@@ -15,19 +15,20 @@
         </select>
     </div>
   </div>
-  <ion-content class="has-header">
+  <ion-content class="has-header" delegate-handle="spells">
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right item-text-wrap spell" type="item-text-wrap" ng-repeat="spell in spells"
-        ng-click="spell.expanded=!spell.expanded">
+        ng-click="toggleView(spell)"
+        ng-attr-id="{{'spell-' + spell.id}}">
         <div class="source">
           {{spell.page}}
         </div>
         <h2>{{spell.name}}</h2>
         <div class="level">{{spell.level}} {{spell.school}}</div>
-        <div ng-if="!!spell.material && !spell.expanded">
+        <div ng-if="!!spell.material && !isExpanded(spell)">
           <label>Requires:</label> {{spell.material}}
         </div>
-        <div ng-if="spell.expanded">
+        <div ng-if="isExpanded(spell)">
           <ul>
             <li><label>Casting Time:</label> {{spell.casting_time}}</li>
             <li><label>Range:</label> {{spell.range}}</li>
