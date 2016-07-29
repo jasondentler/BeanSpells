@@ -36,3 +36,44 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     @extend .ion-ios-download;
   }
 }
+
+.spell.item {
+    padding-left: 1em;
+}
+
+.spell, .spell h2 {
+    font-family: 'Times New Roman', Times, serif
+}
+
+.spell .level {
+    font-style: italic;
+}
+
+.spell h2 {
+    font-size: 1.2em;
+    color: maroon;
+    font-variant: small-caps;
+}
+
+.spell label {
+    font-weight: bold;
+}
+
+.spell .source {
+    float: right;
+    font-style: italic;
+    font-size: 0.75em;
+}
+
+.settings .scroll {
+    height: 100%;
+}
+
+.settings input {
+    width: 100%;
+}
+
+.settings .spinner {
+    padding: 1em;
+}
+
