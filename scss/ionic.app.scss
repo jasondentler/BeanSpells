@@ -19,23 +19,7 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
-
-//default
-.ion-download{
-  @extend .ion-android-download;
-}
-.platform-android {
-  .ion-download{
-    @extend .ion-android-download;
-  }
-}
-
-.platform-ios {
-  .ion-download {
-    @extend .ion-ios-download;
-  }
-}
+@import "www/lib/ionic/scss/ionic", 'partials/icons';
 
 .spell.item {
     padding-left: 1em;

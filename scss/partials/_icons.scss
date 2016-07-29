@@ -1,0 +1,34 @@
+@import "../www/lib/ionic/scss/ionic";
+
+.ion-download {
+    @extend .ion-android-download;
+}
+
+.ion-gear {
+    @extend .ion-ios-gear;
+}
+
+.ion-gear-outline {
+    @extend .ion-ios-gear-outline;
+}
+
+.ion-color-wand {
+  @extend .ion-ios-color-wand;
+}
+
+.ion-color-wand-outline {
+  @extend .ion-ios-color-wand-outline;
+}
+
+.platform-android {
+  .ion-download {
+    @extend .ion-android-download;
+  }
+}
+
+.platform-ios {
+  .ion-download {
+    @extend .ion-ios-download;
+  }
+}
+
