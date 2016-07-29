@@ -1,11 +1,18 @@
 <ion-view view-title="Settings" class="settings">
     <ion-content>
-        <div ng-if="!updatingSpells">
-            <input type="text" id="spellUrl" ng-model="spellUrlTextValue" />
-            <button ng-click="updateSpellUrl(spellUrlTextValue)" />
-        </div>
-        <div ng-if="updatingSpells">
-            <ion-spinner class="center"></ion-spinner>
+        <div class="list">
+            <div class="item item-input">
+                <label class="item item-input-wrapper">		
+                    <i class="icon ion-edit placeholder-icon"></i>
+                    <input type="text" id="spellUrl" ng-model="spellUrlTextValue" placeholder="Spell data web address" />
+                </label>
+                <button class="button icon-left ion-download" ng-click="updateSpellUrl(spellUrlTextValue)" ng-if="!updatingSpells">
+                    Download
+                </button>
+                <div ng-if="updatingSpells">
+                    <ion-spinner class="center"></ion-spinner>
+                </div>
+            </div>
         </div>
     </ion-content>
 </ion-view>

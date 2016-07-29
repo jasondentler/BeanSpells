@@ -31,20 +31,10 @@
     height: 100%;
 }
 
-.center {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    position: absolute !important;
-    margin:0 auto;
-    width:100%;
-    text-align: center;
+.settings input {
+    width: 100%;
 }
 
-.settings .spinner svg {
-    width: 5em;
-    height: 5em;
+.settings .spinner {
+    padding: 1em;
 }
