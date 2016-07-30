@@ -48,18 +48,18 @@ angular.module('starter.controllers', [])
     }
 
     $scope.toggleView = function (spell) {
-      console.log({'Toggling view of': spell});
-      
+      console.log({ 'Toggling view of': spell });
+
       var selectedSpell = $scope.selectedSpell;
 
       if (selectedSpell == spell) {
         // Unselect the spell
-        console.log({'Toggle off spell': spell.name});
+        console.log({ 'Toggle off spell': spell.name });
         $scope.selectedSpell = null;
         return;
       }
 
-      console.log({'Toggle to spell': spell});
+      console.log({ 'Toggle to spell': spell });
       $scope.selectedSpell = spell;
       setTimeout(function () { Scroller.scrollTo('spell-' + spell.id); }, 0);
     }
@@ -79,6 +79,12 @@ angular.module('starter.controllers', [])
   .controller('SettingsCtrl', function ($scope, Settings, $ionicPopup) {
     console.log('Settings controller');
 
+    if (window.plugins && window.plugins.webintent) {
+      window.plugins.webintent.getUri(function (url) {
+        $scope.spellUrlTextValue = url;
+      });
+    }
+
     $scope.updateSpellUrl = function (url) {
       console.log({ 'Updating spell url to': url });
 
@@ -87,15 +93,15 @@ angular.module('starter.controllers', [])
       Settings.updateSpellUrl(url).then(function (url) {
         console.log('Done updating spells');
       })
-      .catch(function (response) {
-        console.error({response:response});
-        $ionicPopup.alert({
-          title: 'Download failed',
-          template: 'Response: ' + response.statusText
-        });
-      })
-      .finally(function () {
-        $scope.updatingSpells = false;
-      })
+        .catch(function (response) {
+          console.error({ response: response });
+          $ionicPopup.alert({
+            title: 'Download failed',
+            template: 'Response: ' + response.statusText
+          });
+        })
+        .finally(function () {
+          $scope.updatingSpells = false;
+        })
     }
   })
