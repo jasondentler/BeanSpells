@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
   .controller('SpellsCtrl', function ($scope, Spells, Scroller) {
     console.log('Spells controller')
     $scope.filters = {};
-
+    
     var filters = {
       class: null,
       level: null
@@ -76,14 +76,12 @@ angular.module('starter.controllers', [])
     bindSpells(filters);
   })
 
-  .controller('SettingsCtrl', function ($scope, Settings, $ionicPopup) {
+  .controller('SettingsCtrl', function ($scope, Settings, $ionicPopup, $rootScope) {
     console.log('Settings controller');
 
-    if (window.plugins && window.plugins.webintent) {
-      window.plugins.webintent.getUri(function (url) {
-        $scope.spellUrlTextValue = url;
-      });
-    }
+    $scope.updatingSpells = false;
+    if (!!$rootScope && !!$rootScope.spellUrl)
+      $scope.spellUrlTextValue = $rootScope.spellUrl;
 
     $scope.updateSpellUrl = function (url) {
       console.log({ 'Updating spell url to': url });

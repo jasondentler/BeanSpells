@@ -42,6 +42,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   .state('tab.spells', {
     url: '/spells',
+    cache: false,
     views: {
       'tab-spells': {
         templateUrl: 'templates/tab-spells.html',
@@ -64,3 +65,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/spells');
 
 });
+
+if (window.plugins && window.plugins.webintent) {
+  window.plugins.webintent.getUri(function (url) {
+    console.log(url);
+    $rootScope.spellUrl = url;
+  });
+}

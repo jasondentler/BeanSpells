@@ -2,12 +2,14 @@ angular.module('starter.services', [])
   .factory('Spells', function ($q, $http) {
     // Load the default spellbook from a JSON file
 
+    console.log('New instance of Spells service');
+    
     var spells = [{ name: 'name', desc: 'description', id: 0 }];
     var isLoaded = false;
 
     var loadSpells = function () {
       if (isLoaded) return $q.when(spells);
-
+      
       var defaultLocation = 'appdata/spellData.json';
 
       return $http.get(defaultLocation)
@@ -29,7 +31,7 @@ angular.module('starter.services', [])
         spell.calculatedLevel = isNaN(calculatedLevel) ? 0 : calculatedLevel;
       }
 
-      console.log(spells);
+      console.log({'spells':spells});
       return spells;
     }
 
