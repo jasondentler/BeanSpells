@@ -66,9 +66,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 });
 
+/*
 if (window.plugins && window.plugins.webintent) {
   window.plugins.webintent.getUri(function (url) {
     console.log(url);
     $rootScope.spellUrl = url;
   });
 }
+*/

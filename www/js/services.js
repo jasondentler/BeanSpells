@@ -2,15 +2,13 @@ angular.module('starter.services', [])
   .factory('Spells', function ($q, $http) {
     // Load the default spellbook from a JSON file
 
-    console.log('New instance of Spells service');
-    
     var spells = [{ name: 'name', desc: 'description', id: 0 }];
     var isLoaded = false;
 
     var loadSpells = function () {
       if (isLoaded) return $q.when(spells);
       
-      var defaultLocation = 'appdata/spellData.json';
+      var defaultLocation = 'http://jasondentler.com/initial.beanspells.json';
 
       return $http.get(defaultLocation)
         .then(function (response) {
