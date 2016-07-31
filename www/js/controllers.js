@@ -5,7 +5,8 @@ angular.module('starter.controllers', [])
     
     var filters = {
       class: null,
-      level: null
+      level: null,
+      search: null
     };
 
     function bindSpells() {
@@ -15,6 +16,7 @@ angular.module('starter.controllers', [])
 
       if (!!filters.class) filterArray.push(filters.class);
       if (!!filters.level) filterArray.push(filters.level);
+      if (!!filters.search) filterArray.push(filters.search);
 
       Spells.find(filterArray).then(function (spells) {
         $scope.spells = spells;
@@ -39,6 +41,15 @@ angular.module('starter.controllers', [])
       } else {
         $scope.filters.level = null;
         filters.level = null;
+      }
+      bindSpells();
+    }
+
+    $scope.onSearchFilterChange = function(searchString) {
+      if (!!searchString && searchString.length && searchString.trim().length) {
+        filters.search = Spells.filters.search(searchString);
+      } else {
+        filters.search = null;
       }
       bindSpells();
     }

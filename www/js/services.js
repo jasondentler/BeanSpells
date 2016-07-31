@@ -7,7 +7,7 @@ angular.module('starter.services', [])
 
     var loadSpells = function () {
       if (isLoaded) return $q.when(spells);
-      
+
       var defaultLocation = 'http://jasondentler.com/initial.beanspells.json';
 
       return $http.get(defaultLocation)
@@ -29,7 +29,7 @@ angular.module('starter.services', [])
         spell.calculatedLevel = isNaN(calculatedLevel) ? 0 : calculatedLevel;
       }
 
-      console.log({'spells':spells});
+      console.log({ 'spells': spells });
       return spells;
     }
 
@@ -80,6 +80,17 @@ angular.module('starter.services', [])
           var calculatedLevel = parseInt(level, 10);
           return function (item) {
             return item.calculatedLevel <= calculatedLevel;
+          }
+        },
+        search: function (searchString) {
+          var regExp = new RegExp(searchString.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), "i");
+          console.log({ 'Creating filter on search string': searchString });
+          console.log({'RegExp': regExp});
+          return function (item) {
+            return regExp.test(item.name || '') ||
+              regExp.test(item.desc || '') ||
+              regExp.test(item.higher_level || '') ||
+              regExp.test(item.material || '');
           }
         }
       },

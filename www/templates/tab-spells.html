@@ -1,47 +1,58 @@
 <ion-view view-title="Spells">
-  <div class="bar bar-header">
-    <div class="padding">
-      <label for="Class">Class:</label>
-      <select name="Class" id="Class" ng-model="filters.className" ng-init="" ng-change="onClassFilterChange(filters.className)">
+  <ion-side-menus>
+    <ion-side-menu side="left">
+      <div class="padding">
+        <input type="text" id="Search" ng-model="filters.search" ng-init="" ng-change="onSearchFilterChange(filters.search)" placeholder="Search"
+        />
+      </div>
+      <div class="padding">
+        <label for="Class">Class:</label>
+        <select name="Class" id="Class" ng-model="filters.className" ng-init="" ng-change="onClassFilterChange(filters.className)">
           <option value="">All</option>
           <option ng-repeat="class in classes" value="{{class}}">{{class}}</option>
         </select>
-    </div>
-    <div class="padding">
-      <label for="Level">Level:</label>
-      <select name="Level" id="Level" ng-model="filters.level" ng-init="" ng-change="onLevelFilterChange(filters.level)">
+      </div>
+      <div class="padding">
+        <label for="Level">Level:</label>
+        <select name="Level" id="Level" ng-model="filters.level" ng-init="" ng-change="onLevelFilterChange(filters.level)">
           <option value="">All</option>
           <option ng-repeat="level in levels" value="{{level.value}}">{{level.name}}</option>
         </select>
-    </div>    
-  </div>
-  <ion-content class="has-header" delegate-handle="spells">
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right item-text-wrap spell" type="item-text-wrap" ng-repeat="spell in spells"
-        ng-click="toggleView(spell)"
-        ng-attr-id="{{'spell-' + spell.id}}">
-        <div class="source">
-          {{spell.page}}
-        </div>
-        <h2>{{spell.name}}</h2>
-        <div class="level">{{spell.level}} {{spell.school}}</div>
-        <div ng-if="!!spell.material && !isExpanded(spell)">
-          <label>Requires:</label> {{spell.material}}
-        </div>
-        <div ng-if="isExpanded(spell)">
-          <ul>
-            <li><label>Casting Time:</label> {{spell.casting_time}}</li>
-            <li><label>Range:</label> {{spell.range}}</li>
-            <li><label>Components:</label> {{spell.components}} <span ng-if="!!spell.material">({{spell.material}})</span></li>
-            <li><label>Duration:</label> {{spell.duration}}</li>
-            <li ng-if="spell.ritual!=='no'"><label>Ritual:</label> {{spell.ritual}}</li>
-            <li ng-if="spell.concentration!=='no'"><label>Concentration:</label> {{spell.concentration}}</li>
-          </ul>
-          <div ng-bind-html="spell.desc" />
-          <div ng-bind-html="spell.higher_level" />
-        </div>
-        <!--<div ng-bind-html="spell.desc" />-->
-      </ion-item>
-    </ion-list>
-  </ion-content>
+      </div>
+    </ion-side-menu>
+    <ion-side-menu-content>
+      <div class="bar bar-header">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+      </div>
+      <ion-content class="has-header" delegate-handle="spells">
+        <ion-list>
+          <ion-item class="item-remove-animate item-avatar item-icon-right item-text-wrap spell" type="item-text-wrap" ng-repeat="spell in spells"
+            ng-click="toggleView(spell)" ng-attr-id="{{'spell-' + spell.id}}">
+            <div class="source">
+              {{spell.page}}
+            </div>
+            <h2>{{spell.name}}</h2>
+            <div class="level">{{spell.level}} {{spell.school}}</div>
+            <div ng-if="!!spell.material && !isExpanded(spell)">
+              <label>Requires:</label> {{spell.material}}
+            </div>
+            <div ng-if="isExpanded(spell)">
+              <ul>
+                <li><label>Casting Time:</label> {{spell.casting_time}}</li>
+                <li><label>Range:</label> {{spell.range}}</li>
+                <li><label>Components:</label> {{spell.components}} <span ng-if="!!spell.material">({{spell.material}})</span></li>
+                <li><label>Duration:</label> {{spell.duration}}</li>
+                <li ng-if="spell.ritual!=='no'"><label>Ritual:</label> {{spell.ritual}}</li>
+                <li ng-if="spell.concentration!=='no'"><label>Concentration:</label> {{spell.concentration}}</li>
+              </ul>
+              <div ng-bind-html="spell.desc" />
+              <div ng-bind-html="spell.higher_level" />
+            </div>
+            <!--<div ng-bind-html="spell.desc" />-->
+          </ion-item>
+        </ion-list>
+      </ion-content>
+
+    </ion-side-menu-content>
+  </ion-side-menus>
 </ion-view>
