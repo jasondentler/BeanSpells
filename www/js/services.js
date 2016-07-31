@@ -125,7 +125,7 @@ angular.module('starter.services', [])
       }
     }
   })
-  .factory('Scroller', function ($ionicPosition, $ionicScrollDelegate) {
+  .factory('Scroller', function ($ionicPosition, $ionicScrollDelegate, $timeout) {
     function findScrollParent(element) {
       if (!element) return null;
       var jqElement = angular.element(element);
@@ -200,7 +200,7 @@ angular.module('starter.services', [])
           console.log(position);
         }
 
-        scrollDelegate.scrollTo(0, position.top, true);
+        $timeout(function () {scrollDelegate.scrollTo(0, position.top, true);}, 0);
       }
     }
     return scroller;
