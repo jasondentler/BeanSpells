@@ -8,7 +8,7 @@ angular.module('starter.services', [])
     var loadSpells = function () {
       if (isLoaded) return $q.when(spells);
 
-      var defaultLocation = 'http://jasondentler.com/initial.beanspells.json';
+      var defaultLocation = 'http://jasondentler.com/srd.spelldata.json';
 
       return $http.get(defaultLocation)
         .then(function (response) {

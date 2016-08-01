@@ -44,9 +44,9 @@
                 <li><label>Duration:</label> {{spell.duration}}</li>
                 <li ng-if="spell.ritual!=='no'"><label>Ritual:</label> {{spell.ritual}}</li>
                 <li ng-if="spell.concentration!=='no'"><label>Concentration:</label> {{spell.concentration}}</li>
+                <li ng-bind-html="spell.desc"></li>
+                <li ng-if="!!spell.higher_level"><label>At higher levels:</label> <span ng-bind-html="spell.higher_level"></span></li>
               </ul>
-              <div ng-bind-html="spell.desc" />
-              <div ng-bind-html="spell.higher_level" />
             </div>
           </ion-item>
         </ion-list>

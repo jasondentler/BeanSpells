@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.beanspells142154" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.beanspells142154" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Bean Spells</name>
   <description>
-        D&amp;D 5e Spellbook
+        Simple 5e RPG Spellbook
     </description>
   <author email="jasondentler@gmail.com" href="http://jasondentler.com/">
       Jason Dentler
