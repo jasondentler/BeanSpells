@@ -19668,7 +19668,7 @@ button[disabled].reroll {
 .icon.ion-d20 {
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url("/img/d20.png");
+  background-image: url("../img/d20.png");
   background-size: contain; }
 
 .spell.item {
