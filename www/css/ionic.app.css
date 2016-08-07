@@ -19674,8 +19674,12 @@ button[disabled].reroll {
 .spell.item {
   padding-left: 1em; }
 
-.spell, .spell h2 {
+.spell, .spell h2, .roll, .roll h1, .roll h2, .roll h3, .roll h4, .roll h5 {
   font-family: 'Times New Roman', Times, serif; }
+
+.roll h2 {
+  color: maroon;
+  font-variant: small-caps; }
 
 .spell .level {
   font-style: italic; }
@@ -19707,7 +19711,9 @@ button[disabled].reroll {
   font-size: 0.55em;
   line-height: 1.5em; }
 
-button.reroll img {
-  display: inline-block;
-  height: 100%;
+button.reroll {
   vertical-align: middle; }
+  button.reroll img {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }

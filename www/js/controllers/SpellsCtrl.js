@@ -44,6 +44,11 @@ angular.module('starter.controllers')
       spell.parsedDiceNotations = true;
     }
 
+    function scrollTo(spell) {
+      console.log('Scrolling to ' + spell.name);
+      setTimeout(function () { Scroller.scrollTo('spell-' + spell.id); }, 0);
+    }
+
     function bindSpells() {
       console.log('Binding spells');
 
@@ -56,6 +61,21 @@ angular.module('starter.controllers')
       Spells.find(filterArray).then(function (spells) {
         parseDiceNotation(spells);
         $scope.spells = spells;
+        var selectedSpell = $scope.selectedSpell;
+        if (!selectedSpell) return;
+
+        if (spells.indexOf(selectedSpell) !== -1) {
+          scrollTo(selectedSpell);
+          return;
+        }
+
+        // selected spell has been filtered out
+        $scope.toggleView(selectedSpell);
+
+        if (!!spells.length) {
+          scrollTo(spells[0]);
+          return;
+        }
       })
     }
 
@@ -109,7 +129,7 @@ angular.module('starter.controllers')
       console.log({ 'Toggle to spell': spell });
       parseDiceNotation(spell);
       $scope.selectedSpell = spell;
-      setTimeout(function () { Scroller.scrollTo('spell-' + spell.id); }, 0);
+      scrollTo(spell);
     }
 
     Spells.classes().then(function (classes) {

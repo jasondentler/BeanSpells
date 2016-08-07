@@ -25,8 +25,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     padding-left: 1em;
 }
 
-.spell, .spell h2 {
+.spell, .spell h2, .roll, .roll h1, .roll h2, .roll h3, .roll h4, .roll h5 {
     font-family: 'Times New Roman', Times, serif
+}
+
+.roll h2 {
+    color: maroon;
+    font-variant: small-caps;
 }
 
 .spell .level {
@@ -74,6 +79,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 button.reroll {
     @extend .button;
+
+    vertical-align: middle;
 
     img {
         display: inline-block;
