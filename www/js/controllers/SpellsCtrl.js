@@ -11,8 +11,8 @@ angular.module('starter.controllers')
     };
 
     function generateDiceNotationLink(notation) {
-      return ' <a href="#/tab/roll">' + notation.notation + '</a> '
-      //return ' <a href="#/tab/roll/' + notation.count + '/' + notation.sides + '/' + notation.modifier + '">' + notation.notation + '</a> '
+      //return ' <a href="#/tab/roll">' + notation.notation + '</a> '
+      return ' <a href="#/tab/roll/' + notation.count + '/' + notation.sides + '/' + notation.modifier + '">' + notation.notation + '</a> '
     }
 
     function parseDiceNotationFromHtml(html) {

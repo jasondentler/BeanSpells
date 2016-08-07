@@ -52,8 +52,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('tab.roll', {
-    url: '/roll',
-    cache: false,
+    url: '/roll/:count/:sides/:modifier',
+    params: {
+      count: 1,
+      sides: 20,
+      modifier: 0
+    },
     views: {
       'tab-roll': {
         templateUrl: 'templates/tab-roll.html',
