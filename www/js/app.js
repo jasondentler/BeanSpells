@@ -42,7 +42,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   
   .state('tab.spells', {
     url: '/spells',
-    cache: false,
     views: {
       'tab-spells': {
         templateUrl: 'templates/tab-spells.html',
