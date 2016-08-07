@@ -10,13 +10,21 @@
                 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
             </div>
             <ion-content class="has-header">
-                <h4>Roll {{result.notation}}</h4>
+                <h4>Roll: {{result.notation}}</h4>
 
-                <h2>Total: {{result.total}} <button ng-click="roll(count, sides, modifier)">Reroll</button></h2>
+                <h2>Total: {{result.total}}
+                    <button ng-click="roll(count, sides, modifier)" class="reroll">
+                        <img src="/img/d20.png" /> Reroll
+                    </button>
+                </h2>
 
                 <h5>Individual Die Rolls</h5>
                 <ul>
-                    <li ng-repeat="roll in result.rolls">{{roll.value}} <button ng-click="reroll(result, roll.index)">Reroll</button></li>
+                    <li ng-repeat="roll in result.rolls">{{roll.value}}
+                        <button ng-click="reroll(result, roll.index)" class="button button-small" style="vertical-align:middle;">
+                            Reroll
+                        </button>
+                    </li>
                     <li ng-if="!!modifier">+ {{modifier}}</li>
                 </ul>
 

@@ -3758,7 +3758,7 @@ a.subdued {
   width: auto;
   z-index: 11;
   overflow: hidden; }
-  .action-sheet .button {
+  .action-sheet .button, .action-sheet button.reroll {
     display: block;
     padding: 1px;
     width: 100%;
@@ -3767,13 +3767,13 @@ a.subdued {
     background-color: transparent;
     color: #007aff;
     font-size: 21px; }
-    .action-sheet .button:hover {
+    .action-sheet .button:hover, .action-sheet button.reroll:hover {
       color: #007aff; }
-    .action-sheet .button.destructive {
+    .action-sheet .button.destructive, .action-sheet button.destructive.reroll {
       color: #ff3b30; }
-      .action-sheet .button.destructive:hover {
+      .action-sheet .button.destructive:hover, .action-sheet button.destructive.reroll:hover {
         color: #ff3b30; }
-  .action-sheet .button.active, .action-sheet .button.activated {
+  .action-sheet .button.active, .action-sheet button.active.reroll, .action-sheet .button.activated, .action-sheet button.activated.reroll {
     box-shadow: none;
     border-color: #d1d3d6;
     color: #007aff;
@@ -3794,15 +3794,15 @@ a.subdued {
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden; }
-  .action-sheet-group .button {
+  .action-sheet-group .button, .action-sheet-group button.reroll {
     border-width: 1px 0px 0px 0px; }
-  .action-sheet-group .button:first-child:last-child {
+  .action-sheet-group .button:first-child:last-child, .action-sheet-group button.reroll:first-child:last-child {
     border-width: 0; }
 
 .action-sheet-options {
   background: #f1f2f3; }
 
-.action-sheet-cancel .button {
+.action-sheet-cancel .button, .action-sheet-cancel button.reroll {
   font-weight: 500; }
 
 .action-sheet-open {
@@ -3818,7 +3818,8 @@ a.subdued {
 .platform-android .action-sheet {
   margin: 0; }
   .platform-android .action-sheet .action-sheet-title,
-  .platform-android .action-sheet .button {
+  .platform-android .action-sheet .button,
+  .platform-android .action-sheet button.reroll {
     text-align: left;
     border-color: transparent;
     font-size: 16px;
@@ -3827,8 +3828,9 @@ a.subdued {
     font-size: 14px;
     padding: 16px;
     color: #666; }
-  .platform-android .action-sheet .button.active,
-  .platform-android .action-sheet .button.activated {
+  .platform-android .action-sheet .button.active, .platform-android .action-sheet button.active.reroll,
+  .platform-android .action-sheet .button.activated,
+  .platform-android .action-sheet button.activated.reroll {
     background: #e8e8e8; }
 
 .platform-android .action-sheet-group {
@@ -3839,7 +3841,7 @@ a.subdued {
 .platform-android .action-sheet-cancel {
   display: none; }
 
-.platform-android .action-sheet-has-icons .button {
+.platform-android .action-sheet-has-icons .button, .platform-android .action-sheet-has-icons button.reroll {
   padding-left: 56px; }
 
 .backdrop {
@@ -3905,7 +3907,7 @@ a.subdued {
     border: none;
     background: none;
     color: #fff; }
-    .bar.bar-clear .button {
+    .bar.bar-clear .button, .bar.bar-clear button.reroll {
       color: #fff; }
     .bar.bar-clear .title {
       color: #fff; }
@@ -4020,7 +4022,7 @@ a.subdued {
       text-align: right; }
   .bar .title a {
     color: inherit; }
-  .bar .button, .bar button {
+  .bar .button, .bar button.reroll, .bar button {
     z-index: 1;
     padding: 0 8px;
     min-width: initial;
@@ -4028,41 +4030,44 @@ a.subdued {
     font-weight: 400;
     font-size: 13px;
     line-height: 32px; }
-    .bar .button.button-icon:before,
-    .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before, .bar button.button-icon:before,
+    .bar .button.button-icon:before, .bar button.button-icon.reroll:before,
+    .bar .button .icon:before,
+    .bar button.reroll .icon:before, .bar .button.icon:before, .bar button.icon.reroll:before, .bar .button.icon-left:before, .bar button.icon-left.reroll:before, .bar .button.icon-right:before, .bar button.icon-right.reroll:before, .bar button.button-icon:before,
     .bar button .icon:before, .bar button.icon:before, .bar button.icon-left:before, .bar button.icon-right:before {
       padding-right: 2px;
       padding-left: 2px;
       font-size: 20px;
       line-height: 32px; }
-    .bar .button.button-icon, .bar button.button-icon {
+    .bar .button.button-icon, .bar button.button-icon.reroll, .bar button.button-icon {
       font-size: 17px; }
-      .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
+      .bar .button.button-icon .icon:before, .bar button.button-icon.reroll .icon:before, .bar .button.button-icon:before, .bar button.button-icon.reroll:before, .bar .button.button-icon.icon-left:before, .bar button.button-icon.icon-left.reroll:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon.icon-right.reroll:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
         vertical-align: top;
         font-size: 32px;
         line-height: 32px; }
-    .bar .button.button-clear, .bar button.button-clear {
+    .bar .button.button-clear, .bar button.button-clear.reroll, .bar button.button-clear {
       padding-right: 2px;
       padding-left: 2px;
       font-weight: 300;
       font-size: 17px; }
-      .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before, .bar button.button-clear .icon:before, .bar button.button-clear.icon:before, .bar button.button-clear.icon-left:before, .bar button.button-clear.icon-right:before {
+      .bar .button.button-clear .icon:before, .bar button.button-clear.reroll .icon:before, .bar .button.button-clear.icon:before, .bar button.button-clear.icon.reroll:before, .bar .button.button-clear.icon-left:before, .bar button.button-clear.icon-left.reroll:before, .bar .button.button-clear.icon-right:before, .bar button.button-clear.icon-right.reroll:before, .bar button.button-clear .icon:before, .bar button.button-clear.icon:before, .bar button.button-clear.icon-left:before, .bar button.button-clear.icon-right:before {
         font-size: 32px;
         line-height: 32px; }
-    .bar .button.back-button, .bar button.back-button {
+    .bar .button.back-button, .bar button.back-button.reroll, .bar button.back-button {
       display: block;
       margin-right: 5px;
       padding: 0;
       white-space: nowrap;
       font-weight: 400; }
-    .bar .button.back-button.active, .bar .button.back-button.activated, .bar button.back-button.active, .bar button.back-button.activated {
+    .bar .button.back-button.active, .bar button.back-button.active.reroll, .bar .button.back-button.activated, .bar button.back-button.activated.reroll, .bar button.back-button.active, .bar button.back-button.activated {
       opacity: 0.2; }
-  .bar .button-bar > .button,
-  .bar .buttons > .button {
+  .bar .button-bar > .button, .bar .button-bar > button.reroll,
+  .bar .buttons > .button,
+  .bar .buttons > button.reroll {
     min-height: 31px;
     line-height: 32px; }
-  .bar .button-bar + .button,
-  .bar .button + .button-bar {
+  .bar .button-bar + .button, .bar .button-bar + button.reroll,
+  .bar .button + .button-bar,
+  .bar button.reroll + .button-bar {
     margin-left: 5px; }
   .bar .buttons,
   .bar .buttons.primary-buttons,
@@ -4076,9 +4081,13 @@ a.subdued {
   .bar .buttons-right span {
     margin-left: 5px;
     display: inherit; }
-  .bar .title + .button:last-child,
+  .bar .title + .button:last-child, .bar .title + button.reroll:last-child,
   .bar > .button + .button:last-child,
+  .bar > button.reroll + .button:last-child,
+  .bar > .button + button.reroll:last-child,
+  .bar > button.reroll + button.reroll:last-child,
   .bar > .button.pull-right,
+  .bar > button.pull-right.reroll,
   .bar .buttons.pull-right,
   .bar .title + .buttons {
     position: absolute;
@@ -4096,183 +4105,183 @@ a.subdued {
   font-size: 19px;
   line-height: 44px; }
 
-.bar-light .button {
+.bar-light .button, .bar-light button.reroll {
   border-color: #ddd;
   background-color: white;
   color: #444; }
-  .bar-light .button:hover {
+  .bar-light .button:hover, .bar-light button.reroll:hover {
     color: #444;
     text-decoration: none; }
-  .bar-light .button.active, .bar-light .button.activated {
+  .bar-light .button.active, .bar-light button.active.reroll, .bar-light .button.activated, .bar-light button.activated.reroll {
     border-color: #ccc;
     background-color: #fafafa; }
-  .bar-light .button.button-clear {
+  .bar-light .button.button-clear, .bar-light button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #444;
     font-size: 17px; }
-  .bar-light .button.button-icon {
+  .bar-light .button.button-icon, .bar-light button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-stable .button {
+.bar-stable .button, .bar-stable button.reroll {
   border-color: #b2b2b2;
   background-color: #f8f8f8;
   color: #444; }
-  .bar-stable .button:hover {
+  .bar-stable .button:hover, .bar-stable button.reroll:hover {
     color: #444;
     text-decoration: none; }
-  .bar-stable .button.active, .bar-stable .button.activated {
+  .bar-stable .button.active, .bar-stable button.active.reroll, .bar-stable .button.activated, .bar-stable button.activated.reroll {
     border-color: #a2a2a2;
     background-color: #e5e5e5; }
-  .bar-stable .button.button-clear {
+  .bar-stable .button.button-clear, .bar-stable button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #444;
     font-size: 17px; }
-  .bar-stable .button.button-icon {
+  .bar-stable .button.button-icon, .bar-stable button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-positive .button {
+.bar-positive .button, .bar-positive button.reroll {
   border-color: #0c60ee;
   background-color: #387ef5;
   color: #fff; }
-  .bar-positive .button:hover {
+  .bar-positive .button:hover, .bar-positive button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-positive .button.active, .bar-positive .button.activated {
+  .bar-positive .button.active, .bar-positive button.active.reroll, .bar-positive .button.activated, .bar-positive button.activated.reroll {
     border-color: #0c60ee;
     background-color: #0c60ee; }
-  .bar-positive .button.button-clear {
+  .bar-positive .button.button-clear, .bar-positive button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-positive .button.button-icon {
+  .bar-positive .button.button-icon, .bar-positive button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-calm .button {
+.bar-calm .button, .bar-calm button.reroll {
   border-color: #0a9dc7;
   background-color: #11c1f3;
   color: #fff; }
-  .bar-calm .button:hover {
+  .bar-calm .button:hover, .bar-calm button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-calm .button.active, .bar-calm .button.activated {
+  .bar-calm .button.active, .bar-calm button.active.reroll, .bar-calm .button.activated, .bar-calm button.activated.reroll {
     border-color: #0a9dc7;
     background-color: #0a9dc7; }
-  .bar-calm .button.button-clear {
+  .bar-calm .button.button-clear, .bar-calm button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-calm .button.button-icon {
+  .bar-calm .button.button-icon, .bar-calm button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-assertive .button {
+.bar-assertive .button, .bar-assertive button.reroll {
   border-color: #e42112;
   background-color: #ef473a;
   color: #fff; }
-  .bar-assertive .button:hover {
+  .bar-assertive .button:hover, .bar-assertive button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-assertive .button.active, .bar-assertive .button.activated {
+  .bar-assertive .button.active, .bar-assertive button.active.reroll, .bar-assertive .button.activated, .bar-assertive button.activated.reroll {
     border-color: #e42112;
     background-color: #e42112; }
-  .bar-assertive .button.button-clear {
+  .bar-assertive .button.button-clear, .bar-assertive button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-assertive .button.button-icon {
+  .bar-assertive .button.button-icon, .bar-assertive button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-balanced .button {
+.bar-balanced .button, .bar-balanced button.reroll {
   border-color: #28a54c;
   background-color: #33cd5f;
   color: #fff; }
-  .bar-balanced .button:hover {
+  .bar-balanced .button:hover, .bar-balanced button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-balanced .button.active, .bar-balanced .button.activated {
+  .bar-balanced .button.active, .bar-balanced button.active.reroll, .bar-balanced .button.activated, .bar-balanced button.activated.reroll {
     border-color: #28a54c;
     background-color: #28a54c; }
-  .bar-balanced .button.button-clear {
+  .bar-balanced .button.button-clear, .bar-balanced button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-balanced .button.button-icon {
+  .bar-balanced .button.button-icon, .bar-balanced button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-energized .button {
+.bar-energized .button, .bar-energized button.reroll {
   border-color: #e6b500;
   background-color: #ffc900;
   color: #fff; }
-  .bar-energized .button:hover {
+  .bar-energized .button:hover, .bar-energized button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-energized .button.active, .bar-energized .button.activated {
+  .bar-energized .button.active, .bar-energized button.active.reroll, .bar-energized .button.activated, .bar-energized button.activated.reroll {
     border-color: #e6b500;
     background-color: #e6b500; }
-  .bar-energized .button.button-clear {
+  .bar-energized .button.button-clear, .bar-energized button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-energized .button.button-icon {
+  .bar-energized .button.button-icon, .bar-energized button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-royal .button {
+.bar-royal .button, .bar-royal button.reroll {
   border-color: #6b46e5;
   background-color: #886aea;
   color: #fff; }
-  .bar-royal .button:hover {
+  .bar-royal .button:hover, .bar-royal button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-royal .button.active, .bar-royal .button.activated {
+  .bar-royal .button.active, .bar-royal button.active.reroll, .bar-royal .button.activated, .bar-royal button.activated.reroll {
     border-color: #6b46e5;
     background-color: #6b46e5; }
-  .bar-royal .button.button-clear {
+  .bar-royal .button.button-clear, .bar-royal button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-royal .button.button-icon {
+  .bar-royal .button.button-icon, .bar-royal button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-dark .button {
+.bar-dark .button, .bar-dark button.reroll {
   border-color: #111;
   background-color: #444444;
   color: #fff; }
-  .bar-dark .button:hover {
+  .bar-dark .button:hover, .bar-dark button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-dark .button.active, .bar-dark .button.activated {
+  .bar-dark .button.active, .bar-dark button.active.reroll, .bar-dark .button.activated, .bar-dark button.activated.reroll {
     border-color: #000;
     background-color: #262626; }
-  .bar-dark .button.button-clear {
+  .bar-dark .button.button-clear, .bar-dark button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-dark .button.button-icon {
+  .bar-dark .button.button-icon, .bar-dark button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
@@ -5621,7 +5630,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   flex-direction: row;
   padding: 10px;
   min-height: 65px; }
-  .popup-buttons .button {
+  .popup-buttons .button, .popup-buttons button.reroll {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
@@ -5633,7 +5642,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     border-radius: 2px;
     line-height: 20px;
     margin-right: 5px; }
-    .popup-buttons .button:last-child {
+    .popup-buttons .button:last-child, .popup-buttons button.reroll:last-child {
       margin-right: 0px; }
 
 .popup-open {
@@ -6215,8 +6224,9 @@ a.item-content {
 .item-button-left {
   padding-left: 72px; }
 
-.item-button-left > .button,
-.item-button-left .item-content > .button {
+.item-button-left > .button, .item-button-left > button.reroll,
+.item-button-left .item-content > .button,
+.item-button-left .item-content > button.reroll {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -6235,14 +6245,18 @@ a.item-content {
   min-height: 34px;
   font-size: 18px;
   line-height: 32px; }
-  .item-button-left > .button .icon:before,
-  .item-button-left .item-content > .button .icon:before {
+  .item-button-left > .button .icon:before, .item-button-left > button.reroll .icon:before,
+  .item-button-left .item-content > .button .icon:before,
+  .item-button-left .item-content > button.reroll .icon:before {
     position: relative;
     left: auto;
     width: auto;
     line-height: 31px; }
-  .item-button-left > .button > .button,
-  .item-button-left .item-content > .button > .button {
+  .item-button-left > .button > .button, .item-button-left > button.reroll > .button, .item-button-left > .button > button.reroll, .item-button-left > button.reroll > button.reroll,
+  .item-button-left .item-content > .button > .button,
+  .item-button-left .item-content > button.reroll > .button,
+  .item-button-left .item-content > .button > button.reroll,
+  .item-button-left .item-content > button.reroll > button.reroll {
     margin: 0px 2px;
     min-height: 34px;
     font-size: 18px;
@@ -6253,8 +6267,9 @@ a.item.item-button-right,
 button.item.item-button-right {
   padding-right: 80px; }
 
-.item-button-right > .button,
+.item-button-right > .button, .item-button-right > button.reroll,
 .item-button-right .item-content > .button,
+.item-button-right .item-content > button.reroll,
 .item-button-right > .buttons,
 .item-button-right .item-content > .buttons {
   display: -webkit-box;
@@ -6275,28 +6290,34 @@ button.item.item-button-right {
   min-height: 34px;
   font-size: 18px;
   line-height: 32px; }
-  .item-button-right > .button .icon:before,
+  .item-button-right > .button .icon:before, .item-button-right > button.reroll .icon:before,
   .item-button-right .item-content > .button .icon:before,
+  .item-button-right .item-content > button.reroll .icon:before,
   .item-button-right > .buttons .icon:before,
   .item-button-right .item-content > .buttons .icon:before {
     position: relative;
     left: auto;
     width: auto;
     line-height: 31px; }
-  .item-button-right > .button > .button,
+  .item-button-right > .button > .button, .item-button-right > button.reroll > .button, .item-button-right > .button > button.reroll, .item-button-right > button.reroll > button.reroll,
   .item-button-right .item-content > .button > .button,
+  .item-button-right .item-content > button.reroll > .button,
+  .item-button-right .item-content > .button > button.reroll,
+  .item-button-right .item-content > button.reroll > button.reroll,
   .item-button-right > .buttons > .button,
-  .item-button-right .item-content > .buttons > .button {
+  .item-button-right > .buttons > button.reroll,
+  .item-button-right .item-content > .buttons > .button,
+  .item-button-right .item-content > .buttons > button.reroll {
     margin: 0px 2px;
     min-width: 34px;
     min-height: 34px;
     font-size: 18px;
     line-height: 32px; }
 
-.item-button-left.item-button-right .button:first-child {
+.item-button-left.item-button-right .button:first-child, .item-button-left.item-button-right button.reroll:first-child {
   right: auto; }
 
-.item-button-left.item-button-right .button:last-child {
+.item-button-left.item-button-right .button:last-child, .item-button-left.item-button-right button.reroll:last-child {
   left: auto; }
 
 .item-avatar,
@@ -6486,9 +6507,9 @@ button.item.item-button-right {
   opacity: 0;
   -webkit-transform: translate3d(-21px, 0, 0);
   transform: translate3d(-21px, 0, 0); }
-  .item-left-edit .button {
+  .item-left-edit .button, .item-left-edit button.reroll {
     height: 100%; }
-    .item-left-edit .button.icon {
+    .item-left-edit .button.icon, .item-left-edit button.icon.reroll {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -6514,10 +6535,10 @@ button.item.item-button-right {
   -webkit-transition-delay: 125ms;
   transition-delay: 125ms; }
 
-.item-delete .button.icon {
+.item-delete .button.icon, .item-delete button.icon.reroll {
   color: #ef473a;
   font-size: 24px; }
-  .item-delete .button.icon:hover {
+  .item-delete .button.icon:hover, .item-delete button.icon.reroll:hover {
     opacity: .7; }
 
 .item-right-edit {
@@ -6535,10 +6556,10 @@ button.item.item-button-right {
   opacity: 0;
   -webkit-transform: translate3d(75px, 0, 0);
   transform: translate3d(75px, 0, 0); }
-  .item-right-edit .button {
+  .item-right-edit .button, .item-right-edit button.reroll {
     min-width: 50px;
     height: 100%; }
-    .item-right-edit .button.icon {
+    .item-right-edit .button.icon, .item-right-edit button.icon.reroll {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -6561,7 +6582,7 @@ button.item.item-button-right {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
 
-.item-reorder .button.icon {
+.item-reorder .button.icon, .item-reorder button.icon.reroll {
   color: #444;
   font-size: 32px; }
 
@@ -6588,7 +6609,7 @@ button.item.item-button-right {
   right: 0;
   z-index: 1;
   height: 100%; }
-  .item-options .button {
+  .item-options .button, .item-options button.reroll {
     height: 100%;
     border: none;
     border-radius: 0;
@@ -6602,7 +6623,7 @@ button.item.item-button-right {
     -webkit-align-items: center;
     -moz-align-items: center;
     align-items: center; }
-    .item-options .button:before {
+    .item-options .button:before, .item-options button.reroll:before {
       margin: 0 auto; }
 
 /**
@@ -6774,7 +6795,7 @@ button.item.item-button-right {
   background-color: #444;
   color: #fff; }
 
-.button .badge {
+.button .badge, button.reroll .badge {
   position: relative;
   top: -1px; }
 
@@ -7582,7 +7603,7 @@ textarea {
     margin: 0;
     padding-right: 24px;
     background-color: transparent; }
-  .item-input .button .icon {
+  .item-input .button .icon, .item-input button.reroll .icon {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 24px;
     -moz-box-flex: 0;
@@ -7658,7 +7679,7 @@ textarea {
   background: transparent;
   line-height: 18px; }
 
-.item-input-wrapper ~ .button {
+.item-input-wrapper ~ .button, .item-input-wrapper ~ button.reroll {
   margin-left: 10.66667px; }
 
 .input-label {
@@ -8573,7 +8594,7 @@ progress {
  * Buttons
  * --------------------------------------------------
  */
-.button {
+.button, button.reroll {
   border-color: transparent;
   background-color: #f8f8f8;
   color: #444;
@@ -8592,271 +8613,271 @@ progress {
   font-size: 16px;
   line-height: 42px;
   cursor: pointer; }
-  .button:hover {
+  .button:hover, button.reroll:hover {
     color: #444;
     text-decoration: none; }
-  .button.active, .button.activated {
+  .button.active, button.active.reroll, .button.activated, button.activated.reroll {
     border-color: #a2a2a2;
     background-color: #e5e5e5; }
-  .button:after {
+  .button:after, button.reroll:after {
     position: absolute;
     top: -6px;
     right: -6px;
     bottom: -6px;
     left: -6px;
     content: ' '; }
-  .button .icon {
+  .button .icon, button.reroll .icon {
     vertical-align: top;
     pointer-events: none; }
-  .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
+  .button .icon:before, button.reroll .icon:before, .button.icon:before, button.icon.reroll:before, .button.icon-left:before, button.icon-left.reroll:before, .button.icon-right:before, button.icon-right.reroll:before {
     display: inline-block;
     padding: 0 0 1px 0;
     vertical-align: inherit;
     font-size: 24px;
     line-height: 41px;
     pointer-events: none; }
-  .button.icon-left:before {
+  .button.icon-left:before, button.icon-left.reroll:before {
     float: left;
     padding-right: .2em;
     padding-left: 0; }
-  .button.icon-right:before {
+  .button.icon-right:before, button.icon-right.reroll:before {
     float: right;
     padding-right: 0;
     padding-left: .2em; }
-  .button.button-block, .button.button-full {
+  .button.button-block, button.button-block.reroll, .button.button-full, button.button-full.reroll {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .button.button-light {
+  .button.button-light, button.button-light.reroll {
     border-color: transparent;
     background-color: #fff;
     color: #444; }
-    .button.button-light:hover {
+    .button.button-light:hover, button.button-light.reroll:hover {
       color: #444;
       text-decoration: none; }
-    .button.button-light.active, .button.button-light.activated {
+    .button.button-light.active, button.button-light.active.reroll, .button.button-light.activated, button.button-light.activated.reroll {
       border-color: #a2a2a2;
       background-color: #fafafa; }
-    .button.button-light.button-clear {
+    .button.button-light.button-clear, button.button-light.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ddd; }
-    .button.button-light.button-icon {
+    .button.button-light.button-icon, button.button-light.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-light.button-outline {
+    .button.button-light.button-outline, button.button-light.button-outline.reroll {
       border-color: #ddd;
       background: transparent;
       color: #ddd; }
-      .button.button-light.button-outline.active, .button.button-light.button-outline.activated {
+      .button.button-light.button-outline.active, button.button-light.button-outline.active.reroll, .button.button-light.button-outline.activated, button.button-light.button-outline.activated.reroll {
         background-color: #ddd;
         box-shadow: none;
         color: #fff; }
-  .button.button-stable {
+  .button.button-stable, button.button-stable.reroll {
     border-color: transparent;
     background-color: #f8f8f8;
     color: #444; }
-    .button.button-stable:hover {
+    .button.button-stable:hover, button.button-stable.reroll:hover {
       color: #444;
       text-decoration: none; }
-    .button.button-stable.active, .button.button-stable.activated {
+    .button.button-stable.active, button.button-stable.active.reroll, .button.button-stable.activated, button.button-stable.activated.reroll {
       border-color: #a2a2a2;
       background-color: #e5e5e5; }
-    .button.button-stable.button-clear {
+    .button.button-stable.button-clear, button.button-stable.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #b2b2b2; }
-    .button.button-stable.button-icon {
+    .button.button-stable.button-icon, button.button-stable.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-stable.button-outline {
+    .button.button-stable.button-outline, button.button-stable.button-outline.reroll {
       border-color: #b2b2b2;
       background: transparent;
       color: #b2b2b2; }
-      .button.button-stable.button-outline.active, .button.button-stable.button-outline.activated {
+      .button.button-stable.button-outline.active, button.button-stable.button-outline.active.reroll, .button.button-stable.button-outline.activated, button.button-stable.button-outline.activated.reroll {
         background-color: #b2b2b2;
         box-shadow: none;
         color: #fff; }
-  .button.button-positive {
+  .button.button-positive, button.button-positive.reroll {
     border-color: transparent;
     background-color: #387ef5;
     color: #fff; }
-    .button.button-positive:hover {
+    .button.button-positive:hover, button.button-positive.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-positive.active, .button.button-positive.activated {
+    .button.button-positive.active, button.button-positive.active.reroll, .button.button-positive.activated, button.button-positive.activated.reroll {
       border-color: #a2a2a2;
       background-color: #0c60ee; }
-    .button.button-positive.button-clear {
+    .button.button-positive.button-clear, button.button-positive.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #387ef5; }
-    .button.button-positive.button-icon {
+    .button.button-positive.button-icon, button.button-positive.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-positive.button-outline {
+    .button.button-positive.button-outline, button.button-positive.button-outline.reroll {
       border-color: #387ef5;
       background: transparent;
       color: #387ef5; }
-      .button.button-positive.button-outline.active, .button.button-positive.button-outline.activated {
+      .button.button-positive.button-outline.active, button.button-positive.button-outline.active.reroll, .button.button-positive.button-outline.activated, button.button-positive.button-outline.activated.reroll {
         background-color: #387ef5;
         box-shadow: none;
         color: #fff; }
-  .button.button-calm {
+  .button.button-calm, button.button-calm.reroll {
     border-color: transparent;
     background-color: #11c1f3;
     color: #fff; }
-    .button.button-calm:hover {
+    .button.button-calm:hover, button.button-calm.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-calm.active, .button.button-calm.activated {
+    .button.button-calm.active, button.button-calm.active.reroll, .button.button-calm.activated, button.button-calm.activated.reroll {
       border-color: #a2a2a2;
       background-color: #0a9dc7; }
-    .button.button-calm.button-clear {
+    .button.button-calm.button-clear, button.button-calm.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #11c1f3; }
-    .button.button-calm.button-icon {
+    .button.button-calm.button-icon, button.button-calm.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-calm.button-outline {
+    .button.button-calm.button-outline, button.button-calm.button-outline.reroll {
       border-color: #11c1f3;
       background: transparent;
       color: #11c1f3; }
-      .button.button-calm.button-outline.active, .button.button-calm.button-outline.activated {
+      .button.button-calm.button-outline.active, button.button-calm.button-outline.active.reroll, .button.button-calm.button-outline.activated, button.button-calm.button-outline.activated.reroll {
         background-color: #11c1f3;
         box-shadow: none;
         color: #fff; }
-  .button.button-assertive {
+  .button.button-assertive, button.button-assertive.reroll {
     border-color: transparent;
     background-color: #ef473a;
     color: #fff; }
-    .button.button-assertive:hover {
+    .button.button-assertive:hover, button.button-assertive.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-assertive.active, .button.button-assertive.activated {
+    .button.button-assertive.active, button.button-assertive.active.reroll, .button.button-assertive.activated, button.button-assertive.activated.reroll {
       border-color: #a2a2a2;
       background-color: #e42112; }
-    .button.button-assertive.button-clear {
+    .button.button-assertive.button-clear, button.button-assertive.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ef473a; }
-    .button.button-assertive.button-icon {
+    .button.button-assertive.button-icon, button.button-assertive.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-assertive.button-outline {
+    .button.button-assertive.button-outline, button.button-assertive.button-outline.reroll {
       border-color: #ef473a;
       background: transparent;
       color: #ef473a; }
-      .button.button-assertive.button-outline.active, .button.button-assertive.button-outline.activated {
+      .button.button-assertive.button-outline.active, button.button-assertive.button-outline.active.reroll, .button.button-assertive.button-outline.activated, button.button-assertive.button-outline.activated.reroll {
         background-color: #ef473a;
         box-shadow: none;
         color: #fff; }
-  .button.button-balanced {
+  .button.button-balanced, button.button-balanced.reroll {
     border-color: transparent;
     background-color: #33cd5f;
     color: #fff; }
-    .button.button-balanced:hover {
+    .button.button-balanced:hover, button.button-balanced.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-balanced.active, .button.button-balanced.activated {
+    .button.button-balanced.active, button.button-balanced.active.reroll, .button.button-balanced.activated, button.button-balanced.activated.reroll {
       border-color: #a2a2a2;
       background-color: #28a54c; }
-    .button.button-balanced.button-clear {
+    .button.button-balanced.button-clear, button.button-balanced.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #33cd5f; }
-    .button.button-balanced.button-icon {
+    .button.button-balanced.button-icon, button.button-balanced.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-balanced.button-outline {
+    .button.button-balanced.button-outline, button.button-balanced.button-outline.reroll {
       border-color: #33cd5f;
       background: transparent;
       color: #33cd5f; }
-      .button.button-balanced.button-outline.active, .button.button-balanced.button-outline.activated {
+      .button.button-balanced.button-outline.active, button.button-balanced.button-outline.active.reroll, .button.button-balanced.button-outline.activated, button.button-balanced.button-outline.activated.reroll {
         background-color: #33cd5f;
         box-shadow: none;
         color: #fff; }
-  .button.button-energized {
+  .button.button-energized, button.button-energized.reroll {
     border-color: transparent;
     background-color: #ffc900;
     color: #fff; }
-    .button.button-energized:hover {
+    .button.button-energized:hover, button.button-energized.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-energized.active, .button.button-energized.activated {
+    .button.button-energized.active, button.button-energized.active.reroll, .button.button-energized.activated, button.button-energized.activated.reroll {
       border-color: #a2a2a2;
       background-color: #e6b500; }
-    .button.button-energized.button-clear {
+    .button.button-energized.button-clear, button.button-energized.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ffc900; }
-    .button.button-energized.button-icon {
+    .button.button-energized.button-icon, button.button-energized.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-energized.button-outline {
+    .button.button-energized.button-outline, button.button-energized.button-outline.reroll {
       border-color: #ffc900;
       background: transparent;
       color: #ffc900; }
-      .button.button-energized.button-outline.active, .button.button-energized.button-outline.activated {
+      .button.button-energized.button-outline.active, button.button-energized.button-outline.active.reroll, .button.button-energized.button-outline.activated, button.button-energized.button-outline.activated.reroll {
         background-color: #ffc900;
         box-shadow: none;
         color: #fff; }
-  .button.button-royal {
+  .button.button-royal, button.button-royal.reroll {
     border-color: transparent;
     background-color: #886aea;
     color: #fff; }
-    .button.button-royal:hover {
+    .button.button-royal:hover, button.button-royal.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-royal.active, .button.button-royal.activated {
+    .button.button-royal.active, button.button-royal.active.reroll, .button.button-royal.activated, button.button-royal.activated.reroll {
       border-color: #a2a2a2;
       background-color: #6b46e5; }
-    .button.button-royal.button-clear {
+    .button.button-royal.button-clear, button.button-royal.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #886aea; }
-    .button.button-royal.button-icon {
+    .button.button-royal.button-icon, button.button-royal.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-royal.button-outline {
+    .button.button-royal.button-outline, button.button-royal.button-outline.reroll {
       border-color: #886aea;
       background: transparent;
       color: #886aea; }
-      .button.button-royal.button-outline.active, .button.button-royal.button-outline.activated {
+      .button.button-royal.button-outline.active, button.button-royal.button-outline.active.reroll, .button.button-royal.button-outline.activated, button.button-royal.button-outline.activated.reroll {
         background-color: #886aea;
         box-shadow: none;
         color: #fff; }
-  .button.button-dark {
+  .button.button-dark, button.button-dark.reroll {
     border-color: transparent;
     background-color: #444;
     color: #fff; }
-    .button.button-dark:hover {
+    .button.button-dark:hover, button.button-dark.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-dark.active, .button.button-dark.activated {
+    .button.button-dark.active, button.button-dark.active.reroll, .button.button-dark.activated, button.button-dark.activated.reroll {
       border-color: #a2a2a2;
       background-color: #262626; }
-    .button.button-dark.button-clear {
+    .button.button-dark.button-clear, button.button-dark.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #444; }
-    .button.button-dark.button-icon {
+    .button.button-dark.button-icon, button.button-dark.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-dark.button-outline {
+    .button.button-dark.button-outline, button.button-dark.button-outline.reroll {
       border-color: #444;
       background: transparent;
       color: #444; }
-      .button.button-dark.button-outline.active, .button.button-dark.button-outline.activated {
+      .button.button-dark.button-outline.active, button.button-dark.button-outline.active.reroll, .button.button-dark.button-outline.activated, button.button-dark.button-outline.activated.reroll {
         background-color: #444;
         box-shadow: none;
         color: #fff; }
@@ -8890,7 +8911,7 @@ progress {
   min-width: initial;
   border-color: transparent;
   background: none; }
-  .button-icon.button.active, .button-icon.button.activated {
+  .button-icon.button.active, button.button-icon.active.reroll, .button-icon.button.activated, button.button-icon.activated.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
@@ -8931,7 +8952,7 @@ progress {
       box-shadow: none;
       color: #fff; }
 
-.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child, .roll ion-content > .button.button-block:first-child, .roll ion-side-menu-content > .button.button-block:first-child {
+.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child, .roll ion-content > .button.button-block:first-child, .roll ion-side-menu-content > .button.button-block:first-child, .padding > button.button-block.reroll:first-child, .copyright > button.button-block.reroll:first-child, .roll ion-content > button.button-block.reroll:first-child, .roll ion-side-menu-content > button.button-block.reroll:first-child {
   margin-top: 0; }
 
 .button-block {
@@ -8941,7 +8962,8 @@ progress {
     clear: both; }
 
 .button-full,
-.button-full > .button {
+.button-full > .button,
+.button-full > button.reroll {
   display: block;
   margin-right: 0;
   margin-left: 0;
@@ -8952,6 +8974,7 @@ progress {
 button.button-block,
 button.button-full,
 .button-full > button.button,
+.button-full > button.reroll,
 input.button.button-block {
   width: 100%; }
 
@@ -8960,8 +8983,9 @@ a.button {
   a.button .icon:before, a.button.icon:before, a.button.icon-left:before, a.button.icon-right:before {
     margin-top: 2px; }
 
-.button.disabled,
-.button[disabled] {
+.button.disabled, button.disabled.reroll,
+.button[disabled],
+button[disabled].reroll {
   opacity: .4;
   cursor: default !important;
   pointer-events: none; }
@@ -8994,30 +9018,30 @@ a.button {
       line-height: 0; }
     .button-bar.button-bar-inline:after {
       clear: both; }
-    .button-bar.button-bar-inline > .button {
+    .button-bar.button-bar-inline > .button, .button-bar.button-bar-inline > button.reroll {
       width: auto;
       display: inline-block;
       float: left; }
-  .button-bar.bar-light > .button {
+  .button-bar.bar-light > .button, .button-bar.bar-light > button.reroll {
     border-color: #ddd; }
-  .button-bar.bar-stable > .button {
+  .button-bar.bar-stable > .button, .button-bar.bar-stable > button.reroll {
     border-color: #b2b2b2; }
-  .button-bar.bar-positive > .button {
+  .button-bar.bar-positive > .button, .button-bar.bar-positive > button.reroll {
     border-color: #0c60ee; }
-  .button-bar.bar-calm > .button {
+  .button-bar.bar-calm > .button, .button-bar.bar-calm > button.reroll {
     border-color: #0a9dc7; }
-  .button-bar.bar-assertive > .button {
+  .button-bar.bar-assertive > .button, .button-bar.bar-assertive > button.reroll {
     border-color: #e42112; }
-  .button-bar.bar-balanced > .button {
+  .button-bar.bar-balanced > .button, .button-bar.bar-balanced > button.reroll {
     border-color: #28a54c; }
-  .button-bar.bar-energized > .button {
+  .button-bar.bar-energized > .button, .button-bar.bar-energized > button.reroll {
     border-color: #e6b500; }
-  .button-bar.bar-royal > .button {
+  .button-bar.bar-royal > .button, .button-bar.bar-royal > button.reroll {
     border-color: #6b46e5; }
-  .button-bar.bar-dark > .button {
+  .button-bar.bar-dark > .button, .button-bar.bar-dark > button.reroll {
     border-color: #111; }
 
-.button-bar > .button {
+.button-bar > .button, .button-bar > button.reroll {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -9033,15 +9057,16 @@ a.button {
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap; }
-  .button-bar > .button:before,
-  .button-bar > .button .icon:before {
+  .button-bar > .button:before, .button-bar > button.reroll:before,
+  .button-bar > .button .icon:before,
+  .button-bar > button.reroll .icon:before {
     line-height: 44px; }
-  .button-bar > .button:first-child {
+  .button-bar > .button:first-child, .button-bar > button.reroll:first-child {
     border-radius: 4px 0px 0px 4px; }
-  .button-bar > .button:last-child {
+  .button-bar > .button:last-child, .button-bar > button.reroll:last-child {
     border-right-width: 1px;
     border-radius: 0px 4px 4px 0px; }
-  .button-bar > .button:only-child {
+  .button-bar > .button:only-child, .button-bar > button.reroll:only-child {
     border-radius: 4px; }
 
 .button-bar > .button-small:before,
@@ -13558,7 +13583,7 @@ a.subdued {
   width: auto;
   z-index: 11;
   overflow: hidden; }
-  .action-sheet .button {
+  .action-sheet .button, .action-sheet button.reroll {
     display: block;
     padding: 1px;
     width: 100%;
@@ -13567,13 +13592,13 @@ a.subdued {
     background-color: transparent;
     color: #007aff;
     font-size: 21px; }
-    .action-sheet .button:hover {
+    .action-sheet .button:hover, .action-sheet button.reroll:hover {
       color: #007aff; }
-    .action-sheet .button.destructive {
+    .action-sheet .button.destructive, .action-sheet button.destructive.reroll {
       color: #ff3b30; }
-      .action-sheet .button.destructive:hover {
+      .action-sheet .button.destructive:hover, .action-sheet button.destructive.reroll:hover {
         color: #ff3b30; }
-  .action-sheet .button.active, .action-sheet .button.activated {
+  .action-sheet .button.active, .action-sheet button.active.reroll, .action-sheet .button.activated, .action-sheet button.activated.reroll {
     box-shadow: none;
     border-color: #d1d3d6;
     color: #007aff;
@@ -13594,15 +13619,15 @@ a.subdued {
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden; }
-  .action-sheet-group .button {
+  .action-sheet-group .button, .action-sheet-group button.reroll {
     border-width: 1px 0px 0px 0px; }
-  .action-sheet-group .button:first-child:last-child {
+  .action-sheet-group .button:first-child:last-child, .action-sheet-group button.reroll:first-child:last-child {
     border-width: 0; }
 
 .action-sheet-options {
   background: #f1f2f3; }
 
-.action-sheet-cancel .button {
+.action-sheet-cancel .button, .action-sheet-cancel button.reroll {
   font-weight: 500; }
 
 .action-sheet-open {
@@ -13618,7 +13643,8 @@ a.subdued {
 .platform-android .action-sheet {
   margin: 0; }
   .platform-android .action-sheet .action-sheet-title,
-  .platform-android .action-sheet .button {
+  .platform-android .action-sheet .button,
+  .platform-android .action-sheet button.reroll {
     text-align: left;
     border-color: transparent;
     font-size: 16px;
@@ -13627,8 +13653,9 @@ a.subdued {
     font-size: 14px;
     padding: 16px;
     color: #666; }
-  .platform-android .action-sheet .button.active,
-  .platform-android .action-sheet .button.activated {
+  .platform-android .action-sheet .button.active, .platform-android .action-sheet button.active.reroll,
+  .platform-android .action-sheet .button.activated,
+  .platform-android .action-sheet button.activated.reroll {
     background: #e8e8e8; }
 
 .platform-android .action-sheet-group {
@@ -13639,7 +13666,7 @@ a.subdued {
 .platform-android .action-sheet-cancel {
   display: none; }
 
-.platform-android .action-sheet-has-icons .button {
+.platform-android .action-sheet-has-icons .button, .platform-android .action-sheet-has-icons button.reroll {
   padding-left: 56px; }
 
 .backdrop {
@@ -13705,7 +13732,7 @@ a.subdued {
     border: none;
     background: none;
     color: #fff; }
-    .bar.bar-clear .button {
+    .bar.bar-clear .button, .bar.bar-clear button.reroll {
       color: #fff; }
     .bar.bar-clear .title {
       color: #fff; }
@@ -13820,7 +13847,7 @@ a.subdued {
       text-align: right; }
   .bar .title a {
     color: inherit; }
-  .bar .button, .bar button {
+  .bar .button, .bar button.reroll, .bar button {
     z-index: 1;
     padding: 0 8px;
     min-width: initial;
@@ -13828,41 +13855,44 @@ a.subdued {
     font-weight: 400;
     font-size: 13px;
     line-height: 32px; }
-    .bar .button.button-icon:before,
-    .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before, .bar button.button-icon:before,
+    .bar .button.button-icon:before, .bar button.button-icon.reroll:before,
+    .bar .button .icon:before,
+    .bar button.reroll .icon:before, .bar .button.icon:before, .bar button.icon.reroll:before, .bar .button.icon-left:before, .bar button.icon-left.reroll:before, .bar .button.icon-right:before, .bar button.icon-right.reroll:before, .bar button.button-icon:before,
     .bar button .icon:before, .bar button.icon:before, .bar button.icon-left:before, .bar button.icon-right:before {
       padding-right: 2px;
       padding-left: 2px;
       font-size: 20px;
       line-height: 32px; }
-    .bar .button.button-icon, .bar button.button-icon {
+    .bar .button.button-icon, .bar button.button-icon.reroll, .bar button.button-icon {
       font-size: 17px; }
-      .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
+      .bar .button.button-icon .icon:before, .bar button.button-icon.reroll .icon:before, .bar .button.button-icon:before, .bar button.button-icon.reroll:before, .bar .button.button-icon.icon-left:before, .bar button.button-icon.icon-left.reroll:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon.icon-right.reroll:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
         vertical-align: top;
         font-size: 32px;
         line-height: 32px; }
-    .bar .button.button-clear, .bar button.button-clear {
+    .bar .button.button-clear, .bar button.button-clear.reroll, .bar button.button-clear {
       padding-right: 2px;
       padding-left: 2px;
       font-weight: 300;
       font-size: 17px; }
-      .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before, .bar button.button-clear .icon:before, .bar button.button-clear.icon:before, .bar button.button-clear.icon-left:before, .bar button.button-clear.icon-right:before {
+      .bar .button.button-clear .icon:before, .bar button.button-clear.reroll .icon:before, .bar .button.button-clear.icon:before, .bar button.button-clear.icon.reroll:before, .bar .button.button-clear.icon-left:before, .bar button.button-clear.icon-left.reroll:before, .bar .button.button-clear.icon-right:before, .bar button.button-clear.icon-right.reroll:before, .bar button.button-clear .icon:before, .bar button.button-clear.icon:before, .bar button.button-clear.icon-left:before, .bar button.button-clear.icon-right:before {
         font-size: 32px;
         line-height: 32px; }
-    .bar .button.back-button, .bar button.back-button {
+    .bar .button.back-button, .bar button.back-button.reroll, .bar button.back-button {
       display: block;
       margin-right: 5px;
       padding: 0;
       white-space: nowrap;
       font-weight: 400; }
-    .bar .button.back-button.active, .bar .button.back-button.activated, .bar button.back-button.active, .bar button.back-button.activated {
+    .bar .button.back-button.active, .bar button.back-button.active.reroll, .bar .button.back-button.activated, .bar button.back-button.activated.reroll, .bar button.back-button.active, .bar button.back-button.activated {
       opacity: 0.2; }
-  .bar .button-bar > .button,
-  .bar .buttons > .button {
+  .bar .button-bar > .button, .bar .button-bar > button.reroll,
+  .bar .buttons > .button,
+  .bar .buttons > button.reroll {
     min-height: 31px;
     line-height: 32px; }
-  .bar .button-bar + .button,
-  .bar .button + .button-bar {
+  .bar .button-bar + .button, .bar .button-bar + button.reroll,
+  .bar .button + .button-bar,
+  .bar button.reroll + .button-bar {
     margin-left: 5px; }
   .bar .buttons,
   .bar .buttons.primary-buttons,
@@ -13876,9 +13906,13 @@ a.subdued {
   .bar .buttons-right span {
     margin-left: 5px;
     display: inherit; }
-  .bar .title + .button:last-child,
+  .bar .title + .button:last-child, .bar .title + button.reroll:last-child,
   .bar > .button + .button:last-child,
+  .bar > button.reroll + .button:last-child,
+  .bar > .button + button.reroll:last-child,
+  .bar > button.reroll + button.reroll:last-child,
   .bar > .button.pull-right,
+  .bar > button.pull-right.reroll,
   .bar .buttons.pull-right,
   .bar .title + .buttons {
     position: absolute;
@@ -13896,183 +13930,183 @@ a.subdued {
   font-size: 19px;
   line-height: 44px; }
 
-.bar-light .button {
+.bar-light .button, .bar-light button.reroll {
   border-color: #ddd;
   background-color: white;
   color: #444; }
-  .bar-light .button:hover {
+  .bar-light .button:hover, .bar-light button.reroll:hover {
     color: #444;
     text-decoration: none; }
-  .bar-light .button.active, .bar-light .button.activated {
+  .bar-light .button.active, .bar-light button.active.reroll, .bar-light .button.activated, .bar-light button.activated.reroll {
     border-color: #ccc;
     background-color: #fafafa; }
-  .bar-light .button.button-clear {
+  .bar-light .button.button-clear, .bar-light button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #444;
     font-size: 17px; }
-  .bar-light .button.button-icon {
+  .bar-light .button.button-icon, .bar-light button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-stable .button {
+.bar-stable .button, .bar-stable button.reroll {
   border-color: #b2b2b2;
   background-color: #f8f8f8;
   color: #444; }
-  .bar-stable .button:hover {
+  .bar-stable .button:hover, .bar-stable button.reroll:hover {
     color: #444;
     text-decoration: none; }
-  .bar-stable .button.active, .bar-stable .button.activated {
+  .bar-stable .button.active, .bar-stable button.active.reroll, .bar-stable .button.activated, .bar-stable button.activated.reroll {
     border-color: #a2a2a2;
     background-color: #e5e5e5; }
-  .bar-stable .button.button-clear {
+  .bar-stable .button.button-clear, .bar-stable button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #444;
     font-size: 17px; }
-  .bar-stable .button.button-icon {
+  .bar-stable .button.button-icon, .bar-stable button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-positive .button {
+.bar-positive .button, .bar-positive button.reroll {
   border-color: #0c60ee;
   background-color: #387ef5;
   color: #fff; }
-  .bar-positive .button:hover {
+  .bar-positive .button:hover, .bar-positive button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-positive .button.active, .bar-positive .button.activated {
+  .bar-positive .button.active, .bar-positive button.active.reroll, .bar-positive .button.activated, .bar-positive button.activated.reroll {
     border-color: #0c60ee;
     background-color: #0c60ee; }
-  .bar-positive .button.button-clear {
+  .bar-positive .button.button-clear, .bar-positive button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-positive .button.button-icon {
+  .bar-positive .button.button-icon, .bar-positive button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-calm .button {
+.bar-calm .button, .bar-calm button.reroll {
   border-color: #0a9dc7;
   background-color: #11c1f3;
   color: #fff; }
-  .bar-calm .button:hover {
+  .bar-calm .button:hover, .bar-calm button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-calm .button.active, .bar-calm .button.activated {
+  .bar-calm .button.active, .bar-calm button.active.reroll, .bar-calm .button.activated, .bar-calm button.activated.reroll {
     border-color: #0a9dc7;
     background-color: #0a9dc7; }
-  .bar-calm .button.button-clear {
+  .bar-calm .button.button-clear, .bar-calm button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-calm .button.button-icon {
+  .bar-calm .button.button-icon, .bar-calm button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-assertive .button {
+.bar-assertive .button, .bar-assertive button.reroll {
   border-color: #e42112;
   background-color: #ef473a;
   color: #fff; }
-  .bar-assertive .button:hover {
+  .bar-assertive .button:hover, .bar-assertive button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-assertive .button.active, .bar-assertive .button.activated {
+  .bar-assertive .button.active, .bar-assertive button.active.reroll, .bar-assertive .button.activated, .bar-assertive button.activated.reroll {
     border-color: #e42112;
     background-color: #e42112; }
-  .bar-assertive .button.button-clear {
+  .bar-assertive .button.button-clear, .bar-assertive button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-assertive .button.button-icon {
+  .bar-assertive .button.button-icon, .bar-assertive button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-balanced .button {
+.bar-balanced .button, .bar-balanced button.reroll {
   border-color: #28a54c;
   background-color: #33cd5f;
   color: #fff; }
-  .bar-balanced .button:hover {
+  .bar-balanced .button:hover, .bar-balanced button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-balanced .button.active, .bar-balanced .button.activated {
+  .bar-balanced .button.active, .bar-balanced button.active.reroll, .bar-balanced .button.activated, .bar-balanced button.activated.reroll {
     border-color: #28a54c;
     background-color: #28a54c; }
-  .bar-balanced .button.button-clear {
+  .bar-balanced .button.button-clear, .bar-balanced button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-balanced .button.button-icon {
+  .bar-balanced .button.button-icon, .bar-balanced button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-energized .button {
+.bar-energized .button, .bar-energized button.reroll {
   border-color: #e6b500;
   background-color: #ffc900;
   color: #fff; }
-  .bar-energized .button:hover {
+  .bar-energized .button:hover, .bar-energized button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-energized .button.active, .bar-energized .button.activated {
+  .bar-energized .button.active, .bar-energized button.active.reroll, .bar-energized .button.activated, .bar-energized button.activated.reroll {
     border-color: #e6b500;
     background-color: #e6b500; }
-  .bar-energized .button.button-clear {
+  .bar-energized .button.button-clear, .bar-energized button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-energized .button.button-icon {
+  .bar-energized .button.button-icon, .bar-energized button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-royal .button {
+.bar-royal .button, .bar-royal button.reroll {
   border-color: #6b46e5;
   background-color: #886aea;
   color: #fff; }
-  .bar-royal .button:hover {
+  .bar-royal .button:hover, .bar-royal button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-royal .button.active, .bar-royal .button.activated {
+  .bar-royal .button.active, .bar-royal button.active.reroll, .bar-royal .button.activated, .bar-royal button.activated.reroll {
     border-color: #6b46e5;
     background-color: #6b46e5; }
-  .bar-royal .button.button-clear {
+  .bar-royal .button.button-clear, .bar-royal button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-royal .button.button-icon {
+  .bar-royal .button.button-icon, .bar-royal button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
-.bar-dark .button {
+.bar-dark .button, .bar-dark button.reroll {
   border-color: #111;
   background-color: #444444;
   color: #fff; }
-  .bar-dark .button:hover {
+  .bar-dark .button:hover, .bar-dark button.reroll:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-dark .button.active, .bar-dark .button.activated {
+  .bar-dark .button.active, .bar-dark button.active.reroll, .bar-dark .button.activated, .bar-dark button.activated.reroll {
     border-color: #000;
     background-color: #262626; }
-  .bar-dark .button.button-clear {
+  .bar-dark .button.button-clear, .bar-dark button.button-clear.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
     color: #fff;
     font-size: 17px; }
-  .bar-dark .button.button-icon {
+  .bar-dark .button.button-icon, .bar-dark button.button-icon.reroll {
     border-color: transparent;
     background: none; }
 
@@ -15421,7 +15455,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   flex-direction: row;
   padding: 10px;
   min-height: 65px; }
-  .popup-buttons .button {
+  .popup-buttons .button, .popup-buttons button.reroll {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
@@ -15433,7 +15467,7 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     border-radius: 2px;
     line-height: 20px;
     margin-right: 5px; }
-    .popup-buttons .button:last-child {
+    .popup-buttons .button:last-child, .popup-buttons button.reroll:last-child {
       margin-right: 0px; }
 
 .popup-open {
@@ -16015,8 +16049,9 @@ a.item-content {
 .item-button-left {
   padding-left: 72px; }
 
-.item-button-left > .button,
-.item-button-left .item-content > .button {
+.item-button-left > .button, .item-button-left > button.reroll,
+.item-button-left .item-content > .button,
+.item-button-left .item-content > button.reroll {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -16035,14 +16070,18 @@ a.item-content {
   min-height: 34px;
   font-size: 18px;
   line-height: 32px; }
-  .item-button-left > .button .icon:before,
-  .item-button-left .item-content > .button .icon:before {
+  .item-button-left > .button .icon:before, .item-button-left > button.reroll .icon:before,
+  .item-button-left .item-content > .button .icon:before,
+  .item-button-left .item-content > button.reroll .icon:before {
     position: relative;
     left: auto;
     width: auto;
     line-height: 31px; }
-  .item-button-left > .button > .button,
-  .item-button-left .item-content > .button > .button {
+  .item-button-left > .button > .button, .item-button-left > button.reroll > .button, .item-button-left > .button > button.reroll, .item-button-left > button.reroll > button.reroll,
+  .item-button-left .item-content > .button > .button,
+  .item-button-left .item-content > button.reroll > .button,
+  .item-button-left .item-content > .button > button.reroll,
+  .item-button-left .item-content > button.reroll > button.reroll {
     margin: 0px 2px;
     min-height: 34px;
     font-size: 18px;
@@ -16053,8 +16092,9 @@ a.item.item-button-right,
 button.item.item-button-right {
   padding-right: 80px; }
 
-.item-button-right > .button,
+.item-button-right > .button, .item-button-right > button.reroll,
 .item-button-right .item-content > .button,
+.item-button-right .item-content > button.reroll,
 .item-button-right > .buttons,
 .item-button-right .item-content > .buttons {
   display: -webkit-box;
@@ -16075,28 +16115,34 @@ button.item.item-button-right {
   min-height: 34px;
   font-size: 18px;
   line-height: 32px; }
-  .item-button-right > .button .icon:before,
+  .item-button-right > .button .icon:before, .item-button-right > button.reroll .icon:before,
   .item-button-right .item-content > .button .icon:before,
+  .item-button-right .item-content > button.reroll .icon:before,
   .item-button-right > .buttons .icon:before,
   .item-button-right .item-content > .buttons .icon:before {
     position: relative;
     left: auto;
     width: auto;
     line-height: 31px; }
-  .item-button-right > .button > .button,
+  .item-button-right > .button > .button, .item-button-right > button.reroll > .button, .item-button-right > .button > button.reroll, .item-button-right > button.reroll > button.reroll,
   .item-button-right .item-content > .button > .button,
+  .item-button-right .item-content > button.reroll > .button,
+  .item-button-right .item-content > .button > button.reroll,
+  .item-button-right .item-content > button.reroll > button.reroll,
   .item-button-right > .buttons > .button,
-  .item-button-right .item-content > .buttons > .button {
+  .item-button-right > .buttons > button.reroll,
+  .item-button-right .item-content > .buttons > .button,
+  .item-button-right .item-content > .buttons > button.reroll {
     margin: 0px 2px;
     min-width: 34px;
     min-height: 34px;
     font-size: 18px;
     line-height: 32px; }
 
-.item-button-left.item-button-right .button:first-child {
+.item-button-left.item-button-right .button:first-child, .item-button-left.item-button-right button.reroll:first-child {
   right: auto; }
 
-.item-button-left.item-button-right .button:last-child {
+.item-button-left.item-button-right .button:last-child, .item-button-left.item-button-right button.reroll:last-child {
   left: auto; }
 
 .item-avatar,
@@ -16286,9 +16332,9 @@ button.item.item-button-right {
   opacity: 0;
   -webkit-transform: translate3d(-21px, 0, 0);
   transform: translate3d(-21px, 0, 0); }
-  .item-left-edit .button {
+  .item-left-edit .button, .item-left-edit button.reroll {
     height: 100%; }
-    .item-left-edit .button.icon {
+    .item-left-edit .button.icon, .item-left-edit button.icon.reroll {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -16314,10 +16360,10 @@ button.item.item-button-right {
   -webkit-transition-delay: 125ms;
   transition-delay: 125ms; }
 
-.item-delete .button.icon {
+.item-delete .button.icon, .item-delete button.icon.reroll {
   color: #ef473a;
   font-size: 24px; }
-  .item-delete .button.icon:hover {
+  .item-delete .button.icon:hover, .item-delete button.icon.reroll:hover {
     opacity: .7; }
 
 .item-right-edit {
@@ -16335,10 +16381,10 @@ button.item.item-button-right {
   opacity: 0;
   -webkit-transform: translate3d(75px, 0, 0);
   transform: translate3d(75px, 0, 0); }
-  .item-right-edit .button {
+  .item-right-edit .button, .item-right-edit button.reroll {
     min-width: 50px;
     height: 100%; }
-    .item-right-edit .button.icon {
+    .item-right-edit .button.icon, .item-right-edit button.icon.reroll {
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -16361,7 +16407,7 @@ button.item.item-button-right {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
 
-.item-reorder .button.icon {
+.item-reorder .button.icon, .item-reorder button.icon.reroll {
   color: #444;
   font-size: 32px; }
 
@@ -16388,7 +16434,7 @@ button.item.item-button-right {
   right: 0;
   z-index: 1;
   height: 100%; }
-  .item-options .button {
+  .item-options .button, .item-options button.reroll {
     height: 100%;
     border: none;
     border-radius: 0;
@@ -16402,7 +16448,7 @@ button.item.item-button-right {
     -webkit-align-items: center;
     -moz-align-items: center;
     align-items: center; }
-    .item-options .button:before {
+    .item-options .button:before, .item-options button.reroll:before {
       margin: 0 auto; }
 
 /**
@@ -16574,7 +16620,7 @@ button.item.item-button-right {
   background-color: #444;
   color: #fff; }
 
-.button .badge {
+.button .badge, button.reroll .badge {
   position: relative;
   top: -1px; }
 
@@ -17382,7 +17428,7 @@ textarea {
     margin: 0;
     padding-right: 24px;
     background-color: transparent; }
-  .item-input .button .icon {
+  .item-input .button .icon, .item-input button.reroll .icon {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 24px;
     -moz-box-flex: 0;
@@ -17458,7 +17504,7 @@ textarea {
   background: transparent;
   line-height: 18px; }
 
-.item-input-wrapper ~ .button {
+.item-input-wrapper ~ .button, .item-input-wrapper ~ button.reroll {
   margin-left: 10.66667px; }
 
 .input-label {
@@ -18373,7 +18419,7 @@ progress {
  * Buttons
  * --------------------------------------------------
  */
-.button {
+.button, button.reroll {
   border-color: transparent;
   background-color: #f8f8f8;
   color: #444;
@@ -18392,271 +18438,271 @@ progress {
   font-size: 16px;
   line-height: 42px;
   cursor: pointer; }
-  .button:hover {
+  .button:hover, button.reroll:hover {
     color: #444;
     text-decoration: none; }
-  .button.active, .button.activated {
+  .button.active, button.active.reroll, .button.activated, button.activated.reroll {
     border-color: #a2a2a2;
     background-color: #e5e5e5; }
-  .button:after {
+  .button:after, button.reroll:after {
     position: absolute;
     top: -6px;
     right: -6px;
     bottom: -6px;
     left: -6px;
     content: ' '; }
-  .button .icon {
+  .button .icon, button.reroll .icon {
     vertical-align: top;
     pointer-events: none; }
-  .button .icon:before, .button.icon:before, .button.icon-left:before, .button.icon-right:before {
+  .button .icon:before, button.reroll .icon:before, .button.icon:before, button.icon.reroll:before, .button.icon-left:before, button.icon-left.reroll:before, .button.icon-right:before, button.icon-right.reroll:before {
     display: inline-block;
     padding: 0 0 1px 0;
     vertical-align: inherit;
     font-size: 24px;
     line-height: 41px;
     pointer-events: none; }
-  .button.icon-left:before {
+  .button.icon-left:before, button.icon-left.reroll:before {
     float: left;
     padding-right: .2em;
     padding-left: 0; }
-  .button.icon-right:before {
+  .button.icon-right:before, button.icon-right.reroll:before {
     float: right;
     padding-right: 0;
     padding-left: .2em; }
-  .button.button-block, .button.button-full {
+  .button.button-block, button.button-block.reroll, .button.button-full, button.button-full.reroll {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .button.button-light {
+  .button.button-light, button.button-light.reroll {
     border-color: transparent;
     background-color: #fff;
     color: #444; }
-    .button.button-light:hover {
+    .button.button-light:hover, button.button-light.reroll:hover {
       color: #444;
       text-decoration: none; }
-    .button.button-light.active, .button.button-light.activated {
+    .button.button-light.active, button.button-light.active.reroll, .button.button-light.activated, button.button-light.activated.reroll {
       border-color: #a2a2a2;
       background-color: #fafafa; }
-    .button.button-light.button-clear {
+    .button.button-light.button-clear, button.button-light.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ddd; }
-    .button.button-light.button-icon {
+    .button.button-light.button-icon, button.button-light.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-light.button-outline {
+    .button.button-light.button-outline, button.button-light.button-outline.reroll {
       border-color: #ddd;
       background: transparent;
       color: #ddd; }
-      .button.button-light.button-outline.active, .button.button-light.button-outline.activated {
+      .button.button-light.button-outline.active, button.button-light.button-outline.active.reroll, .button.button-light.button-outline.activated, button.button-light.button-outline.activated.reroll {
         background-color: #ddd;
         box-shadow: none;
         color: #fff; }
-  .button.button-stable {
+  .button.button-stable, button.button-stable.reroll {
     border-color: transparent;
     background-color: #f8f8f8;
     color: #444; }
-    .button.button-stable:hover {
+    .button.button-stable:hover, button.button-stable.reroll:hover {
       color: #444;
       text-decoration: none; }
-    .button.button-stable.active, .button.button-stable.activated {
+    .button.button-stable.active, button.button-stable.active.reroll, .button.button-stable.activated, button.button-stable.activated.reroll {
       border-color: #a2a2a2;
       background-color: #e5e5e5; }
-    .button.button-stable.button-clear {
+    .button.button-stable.button-clear, button.button-stable.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #b2b2b2; }
-    .button.button-stable.button-icon {
+    .button.button-stable.button-icon, button.button-stable.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-stable.button-outline {
+    .button.button-stable.button-outline, button.button-stable.button-outline.reroll {
       border-color: #b2b2b2;
       background: transparent;
       color: #b2b2b2; }
-      .button.button-stable.button-outline.active, .button.button-stable.button-outline.activated {
+      .button.button-stable.button-outline.active, button.button-stable.button-outline.active.reroll, .button.button-stable.button-outline.activated, button.button-stable.button-outline.activated.reroll {
         background-color: #b2b2b2;
         box-shadow: none;
         color: #fff; }
-  .button.button-positive {
+  .button.button-positive, button.button-positive.reroll {
     border-color: transparent;
     background-color: #387ef5;
     color: #fff; }
-    .button.button-positive:hover {
+    .button.button-positive:hover, button.button-positive.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-positive.active, .button.button-positive.activated {
+    .button.button-positive.active, button.button-positive.active.reroll, .button.button-positive.activated, button.button-positive.activated.reroll {
       border-color: #a2a2a2;
       background-color: #0c60ee; }
-    .button.button-positive.button-clear {
+    .button.button-positive.button-clear, button.button-positive.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #387ef5; }
-    .button.button-positive.button-icon {
+    .button.button-positive.button-icon, button.button-positive.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-positive.button-outline {
+    .button.button-positive.button-outline, button.button-positive.button-outline.reroll {
       border-color: #387ef5;
       background: transparent;
       color: #387ef5; }
-      .button.button-positive.button-outline.active, .button.button-positive.button-outline.activated {
+      .button.button-positive.button-outline.active, button.button-positive.button-outline.active.reroll, .button.button-positive.button-outline.activated, button.button-positive.button-outline.activated.reroll {
         background-color: #387ef5;
         box-shadow: none;
         color: #fff; }
-  .button.button-calm {
+  .button.button-calm, button.button-calm.reroll {
     border-color: transparent;
     background-color: #11c1f3;
     color: #fff; }
-    .button.button-calm:hover {
+    .button.button-calm:hover, button.button-calm.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-calm.active, .button.button-calm.activated {
+    .button.button-calm.active, button.button-calm.active.reroll, .button.button-calm.activated, button.button-calm.activated.reroll {
       border-color: #a2a2a2;
       background-color: #0a9dc7; }
-    .button.button-calm.button-clear {
+    .button.button-calm.button-clear, button.button-calm.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #11c1f3; }
-    .button.button-calm.button-icon {
+    .button.button-calm.button-icon, button.button-calm.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-calm.button-outline {
+    .button.button-calm.button-outline, button.button-calm.button-outline.reroll {
       border-color: #11c1f3;
       background: transparent;
       color: #11c1f3; }
-      .button.button-calm.button-outline.active, .button.button-calm.button-outline.activated {
+      .button.button-calm.button-outline.active, button.button-calm.button-outline.active.reroll, .button.button-calm.button-outline.activated, button.button-calm.button-outline.activated.reroll {
         background-color: #11c1f3;
         box-shadow: none;
         color: #fff; }
-  .button.button-assertive {
+  .button.button-assertive, button.button-assertive.reroll {
     border-color: transparent;
     background-color: #ef473a;
     color: #fff; }
-    .button.button-assertive:hover {
+    .button.button-assertive:hover, button.button-assertive.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-assertive.active, .button.button-assertive.activated {
+    .button.button-assertive.active, button.button-assertive.active.reroll, .button.button-assertive.activated, button.button-assertive.activated.reroll {
       border-color: #a2a2a2;
       background-color: #e42112; }
-    .button.button-assertive.button-clear {
+    .button.button-assertive.button-clear, button.button-assertive.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ef473a; }
-    .button.button-assertive.button-icon {
+    .button.button-assertive.button-icon, button.button-assertive.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-assertive.button-outline {
+    .button.button-assertive.button-outline, button.button-assertive.button-outline.reroll {
       border-color: #ef473a;
       background: transparent;
       color: #ef473a; }
-      .button.button-assertive.button-outline.active, .button.button-assertive.button-outline.activated {
+      .button.button-assertive.button-outline.active, button.button-assertive.button-outline.active.reroll, .button.button-assertive.button-outline.activated, button.button-assertive.button-outline.activated.reroll {
         background-color: #ef473a;
         box-shadow: none;
         color: #fff; }
-  .button.button-balanced {
+  .button.button-balanced, button.button-balanced.reroll {
     border-color: transparent;
     background-color: #33cd5f;
     color: #fff; }
-    .button.button-balanced:hover {
+    .button.button-balanced:hover, button.button-balanced.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-balanced.active, .button.button-balanced.activated {
+    .button.button-balanced.active, button.button-balanced.active.reroll, .button.button-balanced.activated, button.button-balanced.activated.reroll {
       border-color: #a2a2a2;
       background-color: #28a54c; }
-    .button.button-balanced.button-clear {
+    .button.button-balanced.button-clear, button.button-balanced.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #33cd5f; }
-    .button.button-balanced.button-icon {
+    .button.button-balanced.button-icon, button.button-balanced.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-balanced.button-outline {
+    .button.button-balanced.button-outline, button.button-balanced.button-outline.reroll {
       border-color: #33cd5f;
       background: transparent;
       color: #33cd5f; }
-      .button.button-balanced.button-outline.active, .button.button-balanced.button-outline.activated {
+      .button.button-balanced.button-outline.active, button.button-balanced.button-outline.active.reroll, .button.button-balanced.button-outline.activated, button.button-balanced.button-outline.activated.reroll {
         background-color: #33cd5f;
         box-shadow: none;
         color: #fff; }
-  .button.button-energized {
+  .button.button-energized, button.button-energized.reroll {
     border-color: transparent;
     background-color: #ffc900;
     color: #fff; }
-    .button.button-energized:hover {
+    .button.button-energized:hover, button.button-energized.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-energized.active, .button.button-energized.activated {
+    .button.button-energized.active, button.button-energized.active.reroll, .button.button-energized.activated, button.button-energized.activated.reroll {
       border-color: #a2a2a2;
       background-color: #e6b500; }
-    .button.button-energized.button-clear {
+    .button.button-energized.button-clear, button.button-energized.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #ffc900; }
-    .button.button-energized.button-icon {
+    .button.button-energized.button-icon, button.button-energized.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-energized.button-outline {
+    .button.button-energized.button-outline, button.button-energized.button-outline.reroll {
       border-color: #ffc900;
       background: transparent;
       color: #ffc900; }
-      .button.button-energized.button-outline.active, .button.button-energized.button-outline.activated {
+      .button.button-energized.button-outline.active, button.button-energized.button-outline.active.reroll, .button.button-energized.button-outline.activated, button.button-energized.button-outline.activated.reroll {
         background-color: #ffc900;
         box-shadow: none;
         color: #fff; }
-  .button.button-royal {
+  .button.button-royal, button.button-royal.reroll {
     border-color: transparent;
     background-color: #886aea;
     color: #fff; }
-    .button.button-royal:hover {
+    .button.button-royal:hover, button.button-royal.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-royal.active, .button.button-royal.activated {
+    .button.button-royal.active, button.button-royal.active.reroll, .button.button-royal.activated, button.button-royal.activated.reroll {
       border-color: #a2a2a2;
       background-color: #6b46e5; }
-    .button.button-royal.button-clear {
+    .button.button-royal.button-clear, button.button-royal.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #886aea; }
-    .button.button-royal.button-icon {
+    .button.button-royal.button-icon, button.button-royal.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-royal.button-outline {
+    .button.button-royal.button-outline, button.button-royal.button-outline.reroll {
       border-color: #886aea;
       background: transparent;
       color: #886aea; }
-      .button.button-royal.button-outline.active, .button.button-royal.button-outline.activated {
+      .button.button-royal.button-outline.active, button.button-royal.button-outline.active.reroll, .button.button-royal.button-outline.activated, button.button-royal.button-outline.activated.reroll {
         background-color: #886aea;
         box-shadow: none;
         color: #fff; }
-  .button.button-dark {
+  .button.button-dark, button.button-dark.reroll {
     border-color: transparent;
     background-color: #444;
     color: #fff; }
-    .button.button-dark:hover {
+    .button.button-dark:hover, button.button-dark.reroll:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-dark.active, .button.button-dark.activated {
+    .button.button-dark.active, button.button-dark.active.reroll, .button.button-dark.activated, button.button-dark.activated.reroll {
       border-color: #a2a2a2;
       background-color: #262626; }
-    .button.button-dark.button-clear {
+    .button.button-dark.button-clear, button.button-dark.button-clear.reroll {
       border-color: transparent;
       background: none;
       box-shadow: none;
       color: #444; }
-    .button.button-dark.button-icon {
+    .button.button-dark.button-icon, button.button-dark.button-icon.reroll {
       border-color: transparent;
       background: none; }
-    .button.button-dark.button-outline {
+    .button.button-dark.button-outline, button.button-dark.button-outline.reroll {
       border-color: #444;
       background: transparent;
       color: #444; }
-      .button.button-dark.button-outline.active, .button.button-dark.button-outline.activated {
+      .button.button-dark.button-outline.active, button.button-dark.button-outline.active.reroll, .button.button-dark.button-outline.activated, button.button-dark.button-outline.activated.reroll {
         background-color: #444;
         box-shadow: none;
         color: #fff; }
@@ -18690,7 +18736,7 @@ progress {
   min-width: initial;
   border-color: transparent;
   background: none; }
-  .button-icon.button.active, .button-icon.button.activated {
+  .button-icon.button.active, button.button-icon.active.reroll, .button-icon.button.activated, button.button-icon.activated.reroll {
     border-color: transparent;
     background: none;
     box-shadow: none;
@@ -18731,7 +18777,7 @@ progress {
       box-shadow: none;
       color: #fff; }
 
-.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child, .roll ion-content > .button.button-block:first-child, .roll ion-side-menu-content > .button.button-block:first-child {
+.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child, .roll ion-content > .button.button-block:first-child, .roll ion-side-menu-content > .button.button-block:first-child, .padding > button.button-block.reroll:first-child, .copyright > button.button-block.reroll:first-child, .roll ion-content > button.button-block.reroll:first-child, .roll ion-side-menu-content > button.button-block.reroll:first-child {
   margin-top: 0; }
 
 .button-block {
@@ -18741,7 +18787,8 @@ progress {
     clear: both; }
 
 .button-full,
-.button-full > .button {
+.button-full > .button,
+.button-full > button.reroll {
   display: block;
   margin-right: 0;
   margin-left: 0;
@@ -18752,6 +18799,7 @@ progress {
 button.button-block,
 button.button-full,
 .button-full > button.button,
+.button-full > button.reroll,
 input.button.button-block {
   width: 100%; }
 
@@ -18760,8 +18808,9 @@ a.button {
   a.button .icon:before, a.button.icon:before, a.button.icon-left:before, a.button.icon-right:before {
     margin-top: 2px; }
 
-.button.disabled,
-.button[disabled] {
+.button.disabled, button.disabled.reroll,
+.button[disabled],
+button[disabled].reroll {
   opacity: .4;
   cursor: default !important;
   pointer-events: none; }
@@ -18794,30 +18843,30 @@ a.button {
       line-height: 0; }
     .button-bar.button-bar-inline:after {
       clear: both; }
-    .button-bar.button-bar-inline > .button {
+    .button-bar.button-bar-inline > .button, .button-bar.button-bar-inline > button.reroll {
       width: auto;
       display: inline-block;
       float: left; }
-  .button-bar.bar-light > .button {
+  .button-bar.bar-light > .button, .button-bar.bar-light > button.reroll {
     border-color: #ddd; }
-  .button-bar.bar-stable > .button {
+  .button-bar.bar-stable > .button, .button-bar.bar-stable > button.reroll {
     border-color: #b2b2b2; }
-  .button-bar.bar-positive > .button {
+  .button-bar.bar-positive > .button, .button-bar.bar-positive > button.reroll {
     border-color: #0c60ee; }
-  .button-bar.bar-calm > .button {
+  .button-bar.bar-calm > .button, .button-bar.bar-calm > button.reroll {
     border-color: #0a9dc7; }
-  .button-bar.bar-assertive > .button {
+  .button-bar.bar-assertive > .button, .button-bar.bar-assertive > button.reroll {
     border-color: #e42112; }
-  .button-bar.bar-balanced > .button {
+  .button-bar.bar-balanced > .button, .button-bar.bar-balanced > button.reroll {
     border-color: #28a54c; }
-  .button-bar.bar-energized > .button {
+  .button-bar.bar-energized > .button, .button-bar.bar-energized > button.reroll {
     border-color: #e6b500; }
-  .button-bar.bar-royal > .button {
+  .button-bar.bar-royal > .button, .button-bar.bar-royal > button.reroll {
     border-color: #6b46e5; }
-  .button-bar.bar-dark > .button {
+  .button-bar.bar-dark > .button, .button-bar.bar-dark > button.reroll {
     border-color: #111; }
 
-.button-bar > .button {
+.button-bar > .button, .button-bar > button.reroll {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -18833,15 +18882,16 @@ a.button {
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap; }
-  .button-bar > .button:before,
-  .button-bar > .button .icon:before {
+  .button-bar > .button:before, .button-bar > button.reroll:before,
+  .button-bar > .button .icon:before,
+  .button-bar > button.reroll .icon:before {
     line-height: 44px; }
-  .button-bar > .button:first-child {
+  .button-bar > .button:first-child, .button-bar > button.reroll:first-child {
     border-radius: 4px 0px 0px 4px; }
-  .button-bar > .button:last-child {
+  .button-bar > .button:last-child, .button-bar > button.reroll:last-child {
     border-right-width: 1px;
     border-radius: 0px 4px 4px 0px; }
-  .button-bar > .button:only-child {
+  .button-bar > .button:only-child, .button-bar > button.reroll:only-child {
     border-radius: 4px; }
 
 .button-bar > .button-small:before,
@@ -19615,6 +19665,19 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.icon.ion-d20 {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url("/img/d20.png");
+  background-size: contain; }
+
+.tabs .tab-item .icon.mcfly {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("https://raw.github.com/driftyco/ionic-site/gh-pages/img/docs/mcfly.jpg");
+  background-size: contain; }
+
 .spell.item {
   padding-left: 1em; }
 
@@ -19650,3 +19713,8 @@ a.button {
   color: dimgray;
   font-size: 0.55em;
   line-height: 1.5em; }
+
+button.reroll img {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }

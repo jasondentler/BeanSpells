@@ -71,3 +71,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .roll ion-content, .roll ion-side-menu-content {
     @extend .padding;
 }
+
+button.reroll {
+    @extend .button;
+
+    img {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
