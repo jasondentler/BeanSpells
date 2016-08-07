@@ -1,8 +1,18 @@
 angular.module('starter.services')
     .factory('DiceRoller', function () {
+        function buildNotation(count, sides, modifier) {
+            var base = count + "d" + sides;
+            if (modifier < 0)
+                return base + "-" + Math.abs(modifier);
+            if (modifier > 0)
+                return base + "+" + modifier;
+            return base;
+        }
+
         // Stores the results of a roll
-        function Result(rolls, modifier) {
+        function Result(notation, rolls, modifier) {
             var self = this;
+            self.notation = notation;
             self.rolls = rolls || [];
             self.modifier = modifier || 0;
             self.recalculate = function () {
@@ -38,11 +48,13 @@ angular.module('starter.services')
             diceSides = cleanUpInt(diceSides, 20);
             modifier = cleanUpInt(modifier, 0);
 
+            var notation = buildNotation(diceCount, diceSides, modifier);
+
             var rolls = [];
             for (var rollCount = 0; rollCount < diceCount; rollCount++)
                 rolls.push({ index: rollCount, sides: diceSides, value: getRandomIntInclusive(1, diceSides) });
 
-            return new Result(rolls, modifier);
+            return new Result(notation, rolls, modifier);
         }
 
         var reroll = function (result, index) {
