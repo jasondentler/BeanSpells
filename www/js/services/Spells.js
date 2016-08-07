@@ -85,7 +85,7 @@ angular.module('starter.services')
         search: function (searchString) {
           var regExp = new RegExp(searchString.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), "i");
           console.log({ 'Creating filter on search string': searchString });
-          console.log({'RegExp': regExp});
+          console.log({ 'RegExp': regExp });
           return function (item) {
             return regExp.test(item.name || '') ||
               regExp.test(item.desc || '') ||

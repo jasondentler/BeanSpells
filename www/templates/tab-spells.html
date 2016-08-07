@@ -27,23 +27,23 @@
       <ion-content class="has-header" delegate-handle="spells">
         <ion-list>
           <ion-item class="item-remove-animate item-avatar item-icon-right item-text-wrap spell" type="item-text-wrap" ng-repeat="spell in spells"
-            ng-click="toggleView(spell)" ng-attr-id="{{'spell-' + spell.id}}">
-            <div class="source">
+            ng-attr-id="{{'spell-' + spell.id}}">
+            <div class="source" ng-click="toggleView(spell)">
               {{spell.page}}
             </div>
-            <h2>{{spell.name}}</h2>
-            <div class="level">{{spell.level}} {{spell.school}}</div>
-            <div ng-if="!!spell.material && !isExpanded(spell)">
+            <h2 ng-click="toggleView(spell)">{{spell.name}}</h2>
+            <div class="level" ng-click="toggleView(spell)">{{spell.level}} {{spell.school}}</div>
+            <div ng-if="!!spell.material && !isExpanded(spell)" ng-click="toggleView(spell)">
               <label>Requires:</label> {{spell.material}}
             </div>
             <div ng-if="isExpanded(spell)">
               <ul>
-                <li><label>Casting Time:</label> {{spell.casting_time}}</li>
-                <li><label>Range:</label> {{spell.range}}</li>
-                <li><label>Components:</label> {{spell.components}} <span ng-if="!!spell.material">({{spell.material}})</span></li>
-                <li><label>Duration:</label> {{spell.duration}}</li>
-                <li ng-if="spell.ritual!=='no'"><label>Ritual:</label> {{spell.ritual}}</li>
-                <li ng-if="spell.concentration!=='no'"><label>Concentration:</label> {{spell.concentration}}</li>
+                <li ng-click="toggleView(spell)"><label>Casting Time:</label> {{spell.casting_time}}</li>
+                <li ng-click="toggleView(spell)"><label>Range:</label> {{spell.range}}</li>
+                <li ng-click="toggleView(spell)"><label>Components:</label> {{spell.components}} <span ng-if="!!spell.material">({{spell.material}})</span></li>
+                <li ng-click="toggleView(spell)"><label>Duration:</label> {{spell.duration}}</li>
+                <li ng-if="spell.ritual!=='no'" ng-click="toggleView(spell)"><label>Ritual:</label> {{spell.ritual}}</li>
+                <li ng-if="spell.concentration!=='no'" ng-click="toggleView(spell)"><label>Concentration:</label> {{spell.concentration}}</li>
                 <li ng-bind-html="spell.desc"></li>
                 <li ng-if="!!spell.higher_level"><label>At higher levels:</label> <span ng-bind-html="spell.higher_level"></span></li>
               </ul>

@@ -1,13 +1,48 @@
 angular.module('starter.controllers')
-  .controller('SpellsCtrl', function ($scope, Spells, Scroller) {
-    console.log('Spells controller')
+  .controller('SpellsCtrl', function ($scope, Spells, Scroller, DiceNotation) {
+    console.log('Spells controller');
+
     $scope.filters = {};
-    
+
     var filters = {
       class: null,
       level: null,
       search: null
     };
+
+    function generateDiceNotationLink(notation) {
+      return ' <a href="#/tab/roll">' + notation.notation + '</a> '
+      //return ' <a href="#/tab/roll/' + notation.count + '/' + notation.sides + '/' + notation.modifier + '">' + notation.notation + '</a> '
+    }
+
+    function parseDiceNotationFromHtml(html) {
+      html = html || '';
+      var notations = DiceNotation.parse(html) || [];
+
+      var offset = 0;
+      for (var i = 0; i < notations.length; i++) {
+        var notation = notations[i];
+
+        var previousLength = html.length;
+        var startIndex = notation.charIndex + offset;
+        var endIndex = startIndex + (notation.matchedText || '').length;
+
+        var link = generateDiceNotationLink(notation);
+        html = html.slice(0, startIndex) + link + html.slice(endIndex);
+
+        //update the offset using the new length
+        offset = offset + (html.length - previousLength);
+      }
+
+      return html;
+    }
+
+    function parseDiceNotation(spell) {
+      if (!!spell.parsedDiceNotations) return;
+      spell.desc = parseDiceNotationFromHtml(spell.desc);
+      spell.higher_level = parseDiceNotationFromHtml(spell.higher_level);
+      spell.parsedDiceNotations = true;
+    }
 
     function bindSpells() {
       console.log('Binding spells');
@@ -19,6 +54,7 @@ angular.module('starter.controllers')
       if (!!filters.search) filterArray.push(filters.search);
 
       Spells.find(filterArray).then(function (spells) {
+        parseDiceNotation(spells);
         $scope.spells = spells;
       })
     }
@@ -45,7 +81,7 @@ angular.module('starter.controllers')
       bindSpells();
     }
 
-    $scope.onSearchFilterChange = function(searchString) {
+    $scope.onSearchFilterChange = function (searchString) {
       if (!!searchString && searchString.length && searchString.trim().length) {
         filters.search = Spells.filters.search(searchString);
       } else {
@@ -71,6 +107,7 @@ angular.module('starter.controllers')
       }
 
       console.log({ 'Toggle to spell': spell });
+      parseDiceNotation(spell);
       $scope.selectedSpell = spell;
       setTimeout(function () { Scroller.scrollTo('spell-' + spell.id); }, 0);
     }

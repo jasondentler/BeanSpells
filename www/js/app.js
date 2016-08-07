@@ -51,6 +51,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.roll', {
+    url: '/roll',
+    cache: false,
+    views: {
+      'tab-roll': {
+        templateUrl: 'templates/tab-roll.html',
+        controller: 'RollCtrl'
+      }
+    }
+  })
+
   .state('tab.settings', {
     url: '/settings',
     views: {
