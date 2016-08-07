@@ -1,7 +1,27 @@
 <ion-view view-title="Roll" class="roll">
     <ion-content>
-        <p>Roll tab
-        </p>
+        <h2>Roll {{count}}d{{sides}}+{{modifier}}</h2>
+        <h1>
+            <input type="number" ng-model="count" placeholder="Count" ng-change="roll(count, sides, modifier)" />
+            <select ng-model="sides" ng-change="roll(count, sides, modifier)">
+                <option ng-selected="sides === 4" value="4">D4</option>
+                <option ng-selected="sides === 6" value="6">D6</option>
+                <option ng-selected="sides === 8" value="8">D8</option>
+                <option ng-selected="sides === 10" value="10">D10</option>
+                <option ng-selected="sides === 12" value="12">D12</option>
+                <option ng-selected="sides === 20" value="20">D20</option>
+                <option ng-selected="sides === 100" value="100">D100</option>
+            </select> +
+            <input type="number" ng-model="modifier" placeholder="Modifier" ng-change="roll(count, sides, modifier)" />
+        </h1>
+
+        <h1>Results</h1>
+        <ul>
+            <li ng-repeat="roll in result.rolls">{{roll.value}} <button ng-click="reroll(result, roll.index)">Reroll</button></li>
+            <li ng-if="!!modifier">+ {{modifier}}</li>
+        </ul>
+
+        <h1>Total: {{result.total}} <button ng-click="roll(count, sides, modifier)">Reroll</button></h1>
     </ion-content>
-        
+
 </ion-view>

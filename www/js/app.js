@@ -58,6 +58,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       sides: 20,
       modifier: 0
     },
+    cache: false,
     views: {
       'tab-roll': {
         templateUrl: 'templates/tab-roll.html',

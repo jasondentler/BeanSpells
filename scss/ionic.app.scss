@@ -67,3 +67,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     font-size: 0.55em;
     line-height:1.5em;
 }
+
+.roll ion-content {
+    @extend .padding;
+}

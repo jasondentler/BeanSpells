@@ -6660,29 +6660,29 @@ button.item.item-button-right {
   .card .item:last-child {
     border-bottom: 0; }
 
-.padding .card, .copyright .card, .padding .list-inset, .copyright .list-inset {
+.padding .card, .copyright .card, .roll ion-content .card, .padding .list-inset, .copyright .list-inset, .roll ion-content .list-inset {
   margin-left: 0;
   margin-right: 0; }
 
 .card .item:first-child,
 .list-inset .item:first-child,
-.padding > .list .item:first-child, .copyright > .list .item:first-child {
+.padding > .list .item:first-child, .copyright > .list .item:first-child, .roll ion-content > .list .item:first-child {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px; }
   .card .item:first-child .item-content,
   .list-inset .item:first-child .item-content,
-  .padding > .list .item:first-child .item-content, .copyright > .list .item:first-child .item-content {
+  .padding > .list .item:first-child .item-content, .copyright > .list .item:first-child .item-content, .roll ion-content > .list .item:first-child .item-content {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px; }
 
 .card .item:last-child,
 .list-inset .item:last-child,
-.padding > .list .item:last-child, .copyright > .list .item:last-child {
+.padding > .list .item:last-child, .copyright > .list .item:last-child, .roll ion-content > .list .item:last-child {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px; }
   .card .item:last-child .item-content,
   .list-inset .item:last-child .item-content,
-  .padding > .list .item:last-child .item-content, .copyright > .list .item:last-child .item-content {
+  .padding > .list .item:last-child .item-content, .copyright > .list .item:last-child .item-content, .roll ion-content > .list .item:last-child .item-content {
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px; }
 
@@ -6692,13 +6692,13 @@ button.item.item-button-right {
 
 .card .item,
 .list-inset .item,
-.padding > .list .item, .copyright > .list .item,
+.padding > .list .item, .copyright > .list .item, .roll ion-content > .list .item,
 .padding-horizontal > .list .item {
   margin-right: 0;
   margin-left: 0; }
   .card .item.item-input input,
   .list-inset .item.item-input input,
-  .padding > .list .item.item-input input, .copyright > .list .item.item-input input,
+  .padding > .list .item.item-input input, .copyright > .list .item.item-input input, .roll ion-content > .list .item.item-input input,
   .padding-horizontal > .list .item.item-input input {
     padding-right: 44px; }
 
@@ -7411,7 +7411,7 @@ ion-slides {
     right: 0;
     left: 0; }
 
-.overflow-scroll.padding > .scroll.overscroll, .overflow-scroll.copyright > .scroll.overscroll {
+.overflow-scroll.padding > .scroll.overscroll, .overflow-scroll.copyright > .scroll.overscroll, .roll ion-content.overflow-scroll > .scroll.overscroll {
   padding: 10px; }
 
 @-webkit-keyframes refresh-spin {
@@ -8931,7 +8931,7 @@ progress {
       box-shadow: none;
       color: #fff; }
 
-.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child {
+.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child, .roll ion-content > .button.button-block:first-child {
   margin-top: 0; }
 
 .button-block {
@@ -9445,7 +9445,7 @@ a.button {
  * Content Padding
  * --------------------------------------------------
  */
-.padding, .copyright {
+.padding, .copyright, .roll ion-content {
   padding: 10px; }
 
 .padding-top,
@@ -16460,29 +16460,29 @@ button.item.item-button-right {
   .card .item:last-child {
     border-bottom: 0; }
 
-.padding .card, .copyright .card, .padding .list-inset, .copyright .list-inset {
+.padding .card, .copyright .card, .roll ion-content .card, .padding .list-inset, .copyright .list-inset, .roll ion-content .list-inset {
   margin-left: 0;
   margin-right: 0; }
 
 .card .item:first-child,
 .list-inset .item:first-child,
-.padding > .list .item:first-child, .copyright > .list .item:first-child {
+.padding > .list .item:first-child, .copyright > .list .item:first-child, .roll ion-content > .list .item:first-child {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px; }
   .card .item:first-child .item-content,
   .list-inset .item:first-child .item-content,
-  .padding > .list .item:first-child .item-content, .copyright > .list .item:first-child .item-content {
+  .padding > .list .item:first-child .item-content, .copyright > .list .item:first-child .item-content, .roll ion-content > .list .item:first-child .item-content {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px; }
 
 .card .item:last-child,
 .list-inset .item:last-child,
-.padding > .list .item:last-child, .copyright > .list .item:last-child {
+.padding > .list .item:last-child, .copyright > .list .item:last-child, .roll ion-content > .list .item:last-child {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px; }
   .card .item:last-child .item-content,
   .list-inset .item:last-child .item-content,
-  .padding > .list .item:last-child .item-content, .copyright > .list .item:last-child .item-content {
+  .padding > .list .item:last-child .item-content, .copyright > .list .item:last-child .item-content, .roll ion-content > .list .item:last-child .item-content {
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px; }
 
@@ -16492,13 +16492,13 @@ button.item.item-button-right {
 
 .card .item,
 .list-inset .item,
-.padding > .list .item, .copyright > .list .item,
+.padding > .list .item, .copyright > .list .item, .roll ion-content > .list .item,
 .padding-horizontal > .list .item {
   margin-right: 0;
   margin-left: 0; }
   .card .item.item-input input,
   .list-inset .item.item-input input,
-  .padding > .list .item.item-input input, .copyright > .list .item.item-input input,
+  .padding > .list .item.item-input input, .copyright > .list .item.item-input input, .roll ion-content > .list .item.item-input input,
   .padding-horizontal > .list .item.item-input input {
     padding-right: 44px; }
 
@@ -17211,7 +17211,7 @@ ion-slides {
     right: 0;
     left: 0; }
 
-.overflow-scroll.padding > .scroll.overscroll, .overflow-scroll.copyright > .scroll.overscroll {
+.overflow-scroll.padding > .scroll.overscroll, .overflow-scroll.copyright > .scroll.overscroll, .roll ion-content.overflow-scroll > .scroll.overscroll {
   padding: 10px; }
 
 @-webkit-keyframes refresh-spin {
@@ -18731,7 +18731,7 @@ progress {
       box-shadow: none;
       color: #fff; }
 
-.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child {
+.padding > .button.button-block:first-child, .copyright > .button.button-block:first-child, .roll ion-content > .button.button-block:first-child {
   margin-top: 0; }
 
 .button-block {
@@ -19245,7 +19245,7 @@ a.button {
  * Content Padding
  * --------------------------------------------------
  */
-.padding, .copyright {
+.padding, .copyright, .roll ion-content {
   padding: 10px; }
 
 .padding-top,

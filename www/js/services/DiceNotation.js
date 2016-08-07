@@ -5,6 +5,7 @@ angular.module('starter.services')
         var whitespacePattern = /\s/gmi
 
         var cleanUpInt = function (intishString, defaultValue) {
+            if (typeof intishString == 'Number') return intishString;
             intishString = intishString || '';
             intishString = intishString.replace(whitespacePattern, '');
             var int = parseInt(intishString, 10);
@@ -18,7 +19,7 @@ angular.module('starter.services')
             while ((patternResult = pattern.exec(text)) !== null) {
                 var matchedNotation = (patternResult[0] || '').replace(whitespacePattern, '');
                 var matchedDiceCount = cleanUpInt(patternResult[1], 1);
-                var matchedDiceSides = cleanUpInt(patternResult[2], 6);
+                var matchedDiceSides = cleanUpInt(patternResult[2], 20);
                 var matchedModifier = cleanUpInt(patternResult[3], 0);
                 var match = {
                     'matchedText': patternResult[0],
